@@ -1,0 +1,87 @@
+@import url('./reset.css');
+
+header {
+    width: 100%;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    background-color: rgba(25, 131, 176, 1);
+    padding-right: 2%;
+    align-items: center;
+    gap: 1rem;
+    & button {
+        background-color: transparent;
+        border: 0;
+        & :hover {
+            scale: 1.1;
+            cursor: pointer;
+        }
+        & img {
+            margin-left: 1.6rem;
+            height: 4vh;
+        }
+    }
+    & h2 {
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    & .logo {
+        color: #eee;
+        font-size: medium;
+    }
+}
+.area-trabajo {
+    display: flex;
+    height: 90vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+menu {
+    display: grid;
+    align-content: start;
+    grid-template-columns: auto;
+    background-color: rgba(29, 37, 44, 1);
+    width: 18vw;
+    max-width: 300px;
+    min-width: 100px;
+    height: 100%;
+    gap: 1.5rem;
+    padding: 0.3rem;
+    padding-top: 1.6rem;
+    & section {
+        color: #eee;
+        font-size: 1.3rem;
+    }
+    & button {
+        padding-left: 5%;
+        text-align: left;
+        color: #eee;
+        cursor: pointer;
+        width: 100%;
+        border: 0;
+        font-size: 1.3rem;
+        background-color: transparent;
+        &:hover {
+            color: #f3e5a7;
+        }
+    }
+}
+main {
+    background-color: #eee;
+    width: 100%;
+    min-height: 100%;
+    border: solid 1px;
+    align-items: start;
+    & header {
+        color: #eee;
+        padding-inline: 2rem;
+        background-color: rgba(29, 37, 44, 1);
+    }
+    & .tabla-conteiner {
+        display: grid;
+        margin: 3%;
+        padding: 3rem;
+        text-align: center;
+        gap: 50%;
+        border: solid 0.12rem rgba(0, 0, 0, 0.150);
+    }
+}
