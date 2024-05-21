@@ -1,5 +1,5 @@
 <?php
-    include('../control/conex.php');
+    include('./conex.php');
     session_start();
 
     if (isset($_POST['Usuario']) && isset($_POST['Contraseña'])) {
