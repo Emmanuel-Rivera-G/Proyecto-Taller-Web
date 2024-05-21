@@ -1,0 +1,15 @@
+{
+  "name": "aplicacion-taller-web",
+  "version": "0.0.1",
+  "description": "Proyecto final de la asignatura de Taller de Programación Web",
+  "main": "main.js",
+  "scripts": {
+    "start": "php -S localhost:8000 -t ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Emmanuel-Rivera-G/Proyecto-Taller-Web.git"
+  },
+  "author": "Grupo",
+  "license": "MIT"
+}
