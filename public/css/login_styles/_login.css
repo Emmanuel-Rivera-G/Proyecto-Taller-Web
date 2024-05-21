@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    font-family: "Ubuntu Sans", sans-serif;;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+}
+
+.contenedor__signin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.contenedor__signin-form{
+    padding: 40px 40px 80px 40px;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 20px;
+    color: black;
+    justify-self: center;
+    align-items: center;
+}
+
+
+h1{
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.contenedor__signin-usuario,.contenedor__signin-contraseña{
+    margin: 30px 5px;
+
+}
+
+label{
+    color: black;
+    font-size: 18px;
+    padding: 50px 0px;
+}
+
+
+.img-signin__size{
+    height: 25px;
+    width: 26px;
+    margin-right: 5px;
+}
+
+button {
+    float: right;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+button:hover{
+    background-color: white;
+    color: black;
+}
+
+a{
+    font-size: 14px;
+    color: black;
+    float: left;
+    margin-left: 10px;
+    padding: 1.5rem;    
+}
+
+
+input {
+   display: block;
+   width: 95%;
+   padding: 10px;
+   margin: 10px;
+   border: none;
+   border-radius: 20px;
+   outline: none;
+}
