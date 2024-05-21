@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de Sesion</title>
-    <link rel="stylesheet" href="../assets/css/_login.css">
+    <link rel="stylesheet" href="../../css/login_styles/_login.css">
 </head>
 <body>
     <div class="contenedor__signin">
-        <form action="../control/validacion.php" method="POST" >
+        <form action="../../../src/db/control/validacion.php" method="POST" >
             <div class="contenedor__signin-form">
                 <h1>Iniciar Sesion</h1>
                 <hr>
                 <div class="contenedor__signin-usuario">
         
-                    <img class="img-signin__size" src="../assets/img/icons/icon-user.png" alt="icon-user">
-                    <label>Usuario</label>
-                    <input type="text" name="Usuario" placeholder="Nombre de usuario ">
-
+                    <img class="img-signin__size" src="../../assets/icons/login/icon-user.png" alt="icon-user">
+                    <label>Usuario
+                        <input type="text" name="Usuario" placeholder="Nombre de usuario ">
+                    </label>
                 </div>
 
                 <div class="contenedor__signin-contraseña">
-                    <img class="img-signin__size" src="../assets/img/icons/icono_contraseña.png" alt="icon-user">
-                    <label>Contraseña</label>
-                    <input type="password" name="Contraseña" placeholder="Contraseña">    
+                    <img class="img-signin__size" src="../../assets/icons/login/icono_contraseña.png" alt="icon-user">
+                    <label>Contraseña
+                        <input type="password" name="Contraseña" placeholder="Contraseña">    
+                    </label>
                 </div>
                 
                 <hr>
                 
                 <button type="submit" value="ingresar" >Iniciar Sesion</button>
-                <a href="register.html">Crear Cuenta</a>
+                <a href="./register.html">Crear Cuenta</a>
             </div>
         </form>
     </div>
