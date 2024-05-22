@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración de Pagos</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/public/css/sections/styles_nuevopago.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div class="d-flex">
+    <div id="sidebar" class="bg-dark p-3">
+      <h4 class="text-center">Menú</h4>
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showSection('pagos')">
+            <i class="fas fa-credit-card"></i>
+            <span class="link-text">Registrar Pago</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showSection('clientes')">
+            <i class="fas fa-users"></i>
+            <span class="link-text">Gestionar Clientes</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showSection('reportes')">
+            <i class="fas fa-chart-line"></i>
+            <span class="link-text">Generar Reportes</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id="content" class="flex-grow-1">
+      <div id="pagos" class="section">
+        <h2>Registrar Pago</h2>
+        <!-- Formulario para registrar pago -->
+        <form>
+          <div class="form-group">
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" name="cliente" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="monto">Monto:</label>
+            <input type="number" id="monto" name="monto" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Registrar Pago</button>
+        </form>
+      </div>
+      <div id="clientes" class="section" style="display: none;">
+        <h2>Gestionar Clientes</h2>
+        <!-- Formulario para gestionar clientes -->
+        <form>
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar Cliente</button>
+        </form>
+      </div>
+      <div id="reportes" class="section" style="display: none;">
+        <h2>Generar Reportes</h2>
+        <!-- Formulario para generar reportes -->
+        <form>
+          <div class="form-group">
+            <label for="fecha_inicio">Fecha de Inicio:</label>
+            <input type="date" id="fecha_inicio" name="fecha_inicio" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="fecha_fin">Fecha de Fin:</label>
+            <input type="date" id="fecha_fin" name="fecha_fin" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Generar Reporte</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="./scripts.js"></script>
+</body>
+</html>

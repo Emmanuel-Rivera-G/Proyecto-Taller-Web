@@ -1,0 +1,38 @@
+#sidebar {
+  min-height: 100vh;
+  background: #343a40;
+  color: white;
+  width: 100px;
+  transition: width 0.7s;
+}
+
+#sidebar:hover {
+  width: 250px;
+}
+
+#sidebar .nav-link {
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  white-space: nowrap; 
+}
+
+#sidebar .nav-link .link-text {
+  margin-left: 10px;
+  display: none;
+}
+
+#sidebar:hover .nav-link .link-text {
+  display: inline;
+}
+
+#content {
+  margin-left: 10px;
+  padding: 20px;
+  transition: margin-left 0.7s;
+}
+
+#sidebar:hover + #content {
+  margin-left: 25px;
+}
