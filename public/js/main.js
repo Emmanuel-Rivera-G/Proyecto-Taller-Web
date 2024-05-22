@@ -37,17 +37,14 @@ document.querySelector('.btn-crear-usuario').addEventListener('click', function 
 });
 
 document.querySelector('.abrir-ventana').addEventListener('click', function () {
-    if (document.querySelector('.modal').hasAttribute('open')) {
-        document.querySelector(".modal").close();
-    } else {
-        document.querySelector(".modal").showModal();
-    }
+    cerrarModal();
 });
 
-document.querySelector('.modal button').addEventListener('click', function () {
+function cerrarModal() {
+    let modal = document.querySelector(".modal")
     if (document.querySelector('.modal').hasAttribute('open')) {
-        document.querySelector(".modal").close();
+        modal.close();
     } else {
-        document.querySelector(".modal").showModal();
+        modal.showModal();
     }
-});
+}

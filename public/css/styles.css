@@ -50,6 +50,7 @@ menu {
     gap: 1.5rem;
     padding: 0.3rem;
     padding-top: 1.6rem;
+    transition: margin-left 0.7s;
     & section {
         color: #eee;
         font-size: 1.3rem;
@@ -71,6 +72,9 @@ menu {
             color: #eee;
             background-color: rgb(43, 78, 94);
         }
+    }
+    &[hidden] {
+        margin-left: -1px;
     }
 }
 

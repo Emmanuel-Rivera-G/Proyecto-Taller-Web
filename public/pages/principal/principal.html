@@ -58,41 +58,39 @@
                 <h2>Crear Usuario</h2>
                 <div class="ventana">
                     <button class="abrir-ventana"><strong>Trabajadores</strong></button>
-                    <div class="ventana-trabajadores" id="ventana-trabajadores">
-                        <dialog class="modal">
-                            <h3>Trabajadores sin Usuario</h3>
-                            <input type="text" id="barra-ventana" placeholder="Ingrese el nombre del empleado a buscar">
-                            <input type="submit" id="b-buscar" value="Buscar">
-                            <table class="tabla-trabajadores">
-                                <thead>
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Apellido Paterno</th>
-                                        <th>Apellido Materno</th>
-                                        <th>Fecha de Nacimiento</th>
-                                        <th>Acción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Juan</td>
-                                        <td>Pérez</td>
-                                        <td>Gómez</td>
-                                        <td>1990-05-15</td>
-                                        <td><button>Editar</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Maria</td>
-                                        <td>González</td>
-                                        <td>Rodríguez</td>
-                                        <td>1988-12-20</td>
-                                        <td><button>Editar</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <button>Cerrar</button>
-                        </dialog>
-                    </div>
+                    <dialog class="modal">
+                        <h3>Trabajadores sin Usuario</h3>
+                        <input type="text" id="barra-ventana" placeholder="Ingrese el nombre del empleado a buscar">
+                        <input type="submit" id="b-buscar" value="Buscar">
+                        <table class="tabla-trabajadores">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Apellido Paterno</th>
+                                    <th>Apellido Materno</th>
+                                    <th>Fecha de Nacimiento</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Juan</td>
+                                    <td>Pérez</td>
+                                    <td>Gómez</td>
+                                    <td>1990-05-15</td>
+                                    <td><button>Editar</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Maria</td>
+                                    <td>González</td>
+                                    <td>Rodríguez</td>
+                                    <td>1988-12-20</td>
+                                    <td><button>Editar</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button onclick="cerrarModal()">Cerrar</button>
+                    </dialog>
                 </div>
                 <form id="creacion-usuario">
                     <label for="nombre-de-empleado"><strong>Datos del Trabajador:</strong></label>
