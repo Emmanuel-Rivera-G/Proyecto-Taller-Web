@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Planillas de Pago</title>
     <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/sections/style_contratos.css">
 </head>
 <body>
     <header>
@@ -47,7 +48,62 @@
             </section>
         </main>
         <main id="contratos" hidden>
-
+            <div class="container">
+                <div class="section">
+                    <div class="search-box">
+                        <h3>Búsqueda por Nombre:</h3> <!-- Cabecera para la búsqueda de contratos -->
+                        <input type="text" id="searchByContract" placeholder="Buscar por nombre...">
+                        <button onclick="searchByContract()">Buscar</button>
+                    </div>
+                    <div>
+                        <h3>Búsqueda por Fecha:</h3>
+                        <div class="search-box">
+                        <h4>Fecha Inicio:</h4>
+                            <input type="date" id="startDate" placeholder="Fecha de inicio">
+                          <button onclick="searchByDate()">Buscar</button>
+                          <h4>Fecha Fin:</h4>
+                            <input type="date" id="endDate" placeholder="Fecha de fin">
+                            <button onclick="searchByDate()">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="section">
+                    <h3>Buscar</h3>
+                    <div class="search-box">
+                        <input type="text" id="additionalFilter" placeholder="nombre...">
+                        <button onclick="additionalFilter()">Buscar</button>
+                    </div>
+                    <h3>Lista de Contratos</h3> 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Año</th>
+                                <th>Mes</th>
+                                <th>Trabajador</th>
+                                <th>Inicio Contrato</th>
+                                <th>Fin Contrato</th>
+                                <th>Cargo</th>
+                                <th>Sueldo</th>
+                                <th>Imprimir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2023</td>
+                                <td>Enero</td>
+                                <td>Trabajador 1</td>
+                                <td>01/01/2023</td>
+                                <td>31/12/2023</td>
+                                <td>Gerente</td>
+                                <td>$3000</td>
+                                <td><button onclick="printDocument('doc1.pdf')">Imprimir</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </main>
     </section>
     <script src="/public/js/main.js"></script>
