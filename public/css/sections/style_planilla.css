@@ -1,11 +1,11 @@
-body {
+#planillas body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 20px;
 }
 
-.container {
+#planillas .container {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -15,22 +15,22 @@ body {
     box-sizing: border-box;
 }
 
-.title {
+#planillas .title {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.form-group {
+#planillas .form-group {
     margin-bottom: 15px;
 }
 
-label {
+#planillas label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-input[type="number"], input[type="month"], input[type="text"], button {
+#planillas input[type="number"], input[type="month"], input[type="text"], button {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -39,14 +39,14 @@ input[type="number"], input[type="month"], input[type="text"], button {
     box-sizing: border-box;
 }
 
-button {
+#planillas button {
     background-color: #007BFF;
     color: #fff;
     border: none;
     cursor: pointer;
 }
 
-button:hover {
+#planillas button:hover {
     background-color: #0056b3;
 }
 
@@ -55,18 +55,18 @@ button:hover {
     margin-top: 20px;
 }
 
-table {
+#planillas table {
     width: 100%;
     border-collapse: collapse;
     min-width: 800px; /*desplazamiento horizontal*/
 }
 
-th, td {
+#planillas th, td {
     padding: 10px;
     border: 1px solid #ccc;
     text-align: left;
 }
 
-th {
+#planillas th {
     background-color: #f8f8f8;
 }
