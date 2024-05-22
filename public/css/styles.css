@@ -16,6 +16,9 @@ header {
             scale: 1.1;
             cursor: pointer;
         }
+        & :active {
+            scale: 0.9;
+        }
         & img {
             margin-left: 1.6rem;
             height: 4vh;
@@ -60,11 +63,17 @@ menu {
         border: 0;
         font-size: 1.3rem;
         background-color: transparent;
+        border-radius: 5%;
         &:hover {
-            color: #f3e5a7;
+            color: #bbfff0;
+        }
+        &:active {
+            color: #eee;
+            background-color: rgb(43, 78, 94);
         }
     }
 }
+
 main {
     background-color: #eee;
     width: 100%;
