@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Planillas de Pago</title>
-    <link rel="stylesheet" href="/public/css/styles.css">
+    <link rel="stylesheet" href="/public/css/sections/style_planilla.css">
     <link rel="stylesheet" href="/public/css/sections/style_contratos.css">
     <link rel="stylesheet" href="/public/css/sections/style_usuarios.css">
+    <link rel="stylesheet" href="/public/css/styles.css">
 </head>
 <body>
     <header>
@@ -118,20 +119,69 @@
             </div>
         </main>
         <main id="planillas" hidden>
-            <section class="tabla-conteiner">
-                <header>
-                    
-                </header>
-                <table>
-                    <tr>
-                        <td>Columna 1</td>
-                        <td>Columna 2</td>
-                        <td>Columna 3</td>
-                        <td>Columna 4</td>
-                        <td>Columna 5</td>
-                    </tr>
-                </table>
-            </section>
+            <div class="container">
+                <div class="title">Búsqueda Planilla</div>
+                <form>
+                    <div class="form-group">
+                        <label for="year">Año</label>
+                        <input type="number" id="year" name="year" min="1900" max="2099" step="1" placeholder="Ingrese el año" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="month">Mes</label>
+                        <input type="month" id="month" name="month" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
+            </div>
+        
+            <div class="container">
+                <div class="title">Listado de Contratos Planillas</div>
+                <form>
+                    <div class="form-group">
+                        <label for="username">Nombre del Usuario</label>
+                        <input type="text" id="username" name="username" placeholder="Ingrese el nombre del usuario" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Posición</th>
+                                <th>Año</th>
+                                <th>Nombre del Trabajador</th>
+                                <th>Inicio de Contrato</th>
+                                <th>Cargo</th>
+                                <th>Sueldo</th>
+                                <th>Cargos Fijos</th>
+                                <th>Sueldo Bruto</th>
+                                <th>Cargo Variable</th>
+                                <th>Sueldo Neto</th>
+                                <th>Reporte</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>2023</td>
+                                <td>Juan Pérez</td>
+                                <td>01/01/2023</td>
+                                <td>Ingeniero</td>
+                                <td>$2000</td>
+                                <td>$300</td>
+                                <td>$2300</td>
+                                <td>$200</td>
+                                <td>$2500</td>
+                                <td><button>Ver Reporte</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </main>
         <main id="contratos" hidden>
             <div class="container">
