@@ -6,6 +6,7 @@
     <title>Sistema de Planillas de Pago</title>
     <link rel="stylesheet" href="/public/css/styles.css">
     <link rel="stylesheet" href="/public/css/sections/style_contratos.css">
+    <link rel="stylesheet" href="/public/css/sections/style_usuarios.css">
 </head>
 <body>
     <header>
@@ -28,8 +29,30 @@
             <li><button class="btn-planilla">Planillas</button></li>
             <li><button class="btn-contrato">Contratos</button></li>
         </menu>
-        <main id="usuarios">
+        <main id="usuarios-1">
             
+            <div class="busqueda-empleado">
+                <div class="titulos-trabajador"><h3>Buscar Trabajador</h3></div>
+                <input type="text" id="barra-busqueda" placeholder="Ingrese nombre del trabajador" autocomplete="off">
+                <input type="submit" id="boton-buscar" value="Buscar">
+                </div>
+                <div class="titulos-trabajador">
+                <h3>Lista de Empleados</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>N`</th>
+                        <th>Nombres</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Estado</th>
+                    </tr>
+                    </thead>
+                    <tbody id="employee-table-body">
+                    <!-- Aquí se añadirán las filas de los empleados dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
         </main>
         <main id="planillas" hidden>
             <section class="tabla-conteiner">
