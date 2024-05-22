@@ -30,3 +30,24 @@ document.querySelector('.btn-planilla').addEventListener('click', function () {
 document.querySelector('.btn-contrato').addEventListener('click', function () {
     comprobarSection(contratos, usuarios, planillas);
 });
+
+document.querySelector('.btn-crear-usuario').addEventListener('click', function () {
+    const ventana = document.querySelector('#ventana-trabajadores');
+    ventana.classList.toggle('show');
+});
+
+document.querySelector('.abrir-ventana').addEventListener('click', function () {
+    if (document.querySelector('.modal').hasAttribute('open')) {
+        document.querySelector(".modal").close();
+    } else {
+        document.querySelector(".modal").showModal();
+    }
+});
+
+document.querySelector('.modal button').addEventListener('click', function () {
+    if (document.querySelector('.modal').hasAttribute('open')) {
+        document.querySelector(".modal").close();
+    } else {
+        document.querySelector(".modal").showModal();
+    }
+});

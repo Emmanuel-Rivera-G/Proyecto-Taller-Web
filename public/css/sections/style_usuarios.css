@@ -14,7 +14,7 @@
   margin-bottom: 30px;
 }
 
-#boton-buscar{
+#boton-buscar, .btn-crear-usuario{
   background-color: #4CAF50;
   border: 3px solid #4CAF50;
   border-radius: .5rem;
@@ -26,7 +26,7 @@
   transition: 0.3s;
 }
 
-#boton-buscar:hover{
+#boton-buscar:hover, .btn-crear-usuario:hover{
   background-color: white;
   color:#4CAF50;
 }
@@ -181,14 +181,9 @@
 
 .ventana-trabajadores{
   display: flex;
-  background-color: rgb(0, 0, 0, 0.3);
   align-items: center;
   justify-content: center;
   position: fixed;
-  pointer-events: none;
-  opacity: 0;
-  top: 0;
-  left: 0;
   height: 100vh;
   width: 100vw;
 }
@@ -198,7 +193,7 @@
   opacity: 1;
 }
 
-.modal{
+dialog.modal{
   background-color: white;
   width: 65rem;
   height: 30rem;
@@ -207,15 +202,32 @@
   border-radius: 1rem;
   box-shadow: 0 2px 4px rgb(0, 0, 0, 0.2);
   text-align: center;
+  top: 10%;
+  left: 15%;
 }
 
-.modal h1 {
+dialog.modal h1 {
   margin: 0;
 }
 
-.modal p {
+dialog.modal p {
   opacity: 0.7;
   font-size: 14px;
+}
+dialog.modal button {
+  margin-top: 1rem;
+  background-color: #4CAF50;
+  border: 3px solid #4CAF50;
+  border-radius: .5rem;
+  height: 2.8rem;
+  width: 14rem;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+dialog.modal::backdrop {
+  background-color: #33344430;
 }
 
 #barra-ventana{
