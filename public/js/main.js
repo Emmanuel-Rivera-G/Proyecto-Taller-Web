@@ -1,3 +1,7 @@
+const usuarios = document.querySelector('#usuarios');
+const planillas = document.querySelector('#planillas');
+const contratos = document.querySelector('#contratos');
+
 document.querySelector('#btn-menu').addEventListener('click', function () {
     const menu = document.querySelector('menu');
     if (menu.hasAttribute('hidden')) {
@@ -6,9 +10,6 @@ document.querySelector('#btn-menu').addEventListener('click', function () {
         menu.setAttribute('hidden', '');
     }
 });
-const usuarios = document.querySelector('#usuarios');
-const planillas = document.querySelector('#planillas');
-const contratos = document.querySelector('#contratos');
 
 document.querySelector('.btn-usuario').addEventListener('click', function () {
     if (usuarios.hasAttribute('hidden')) {
