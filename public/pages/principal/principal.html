@@ -29,12 +29,12 @@
             <li><button class="btn-planilla">Planillas</button></li>
             <li><button class="btn-contrato">Contratos</button></li>
         </menu>
-        <main id="usuarios-1">
-            
-            <div class="busqueda-empleado">
+        <main id="usuarios">
+            <div class="busqueda-empleado" hidden>
                 <div class="titulos-trabajador"><h3>Buscar Trabajador</h3></div>
                 <input type="text" id="barra-busqueda" placeholder="Ingrese nombre del trabajador" autocomplete="off">
                 <input type="submit" id="boton-buscar" value="Buscar">
+                <button class="btn-crear-usuario">Crear Usuario</button>
                 </div>
                 <div class="titulos-trabajador">
                 <h3>Lista de Empleados</h3>
@@ -52,6 +52,69 @@
                     <!-- Aquí se añadirán las filas de los empleados dinámicamente -->
                     </tbody>
                 </table>
+            </div>
+            <div class="creardor-usuario" >
+                <h3>Crear Usuario</h2>
+                    <div class="ventana">
+                        <button class="abrir-ventana"><strong>Trabajadores</strong></button>
+                        <div class="ventana-trabajadores" id="ventana-trabajadores">
+                            <div class="modal">
+                                <h3>Trabajadores sin Usuario</h3>
+                                <input type="text" id="barra-ventana" placeholder="Ingrese el nombre del empleado a buscar">
+                                <input type="submit" id="b-buscar" value="Buscar">
+                                <table class="tabla-trabajadores">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Apellido Paterno</th>
+                                            <th>Apellido Materno</th>
+                                            <th>Fecha de Nacimiento</th>
+                                            <th>Acción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Juan</td>
+                                            <td>Pérez</td>
+                                            <td>Gómez</td>
+                                            <td>1990-05-15</td>
+                                            <td><button>Editar</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maria</td>
+                                            <td>González</td>
+                                            <td>Rodríguez</td>
+                                            <td>1988-12-20</td>
+                                            <td><button>Editar</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <form id="creacion-usuario">
+                      <label for="nombre-de-empleado"><strong>Datos del Trabajador:</strong></label>
+                      <input type="text" placeholder="Ingrese nombre completo" id="nombre-de-empleado" required><br>
+                      <label for="usuario"><strong>Usuario:</strong></label>
+                      <input type="text" placeholder="Ingrese un nombre de usuario" id="usuario" required>
+                      <label for="contraseña"><strong>Contraseña:</strong></label>
+                      <input type="password" placeholder="Ingrese una contraseña" id="contraseña" required>
+                      <label for="rol-empleado"><strong>Rol:</strong></label>
+                      <select name="rol-empleado" id="rol-empleado" required>
+                        <option value="admin">Administrador</option>
+                        <option value="gerencia">Gerencia</option>
+                        <option value="rrhh" selected>Recursos Humanos</option>
+                      </select>
+                      <button type="submit" id="boton-agregar"><strong>Agregar Usuario</strong></button>
+                    </form>
+                    <h3>Fechas de Autorización del Usuario</h3>
+                    <form id="fechas-usuario">
+                        <label for="fecha-inicio"><strong>Fecha de Inicio:</strong></label>
+                        <input type="date" id="fecha-inicio">
+                        <label for="fecha-fin"><strong>Fecha de Fin:</strong></label>
+                        <input type="date" id="fecha-fin">
+                    </form>    
             </div>
         </main>
         <main id="planillas" hidden>
