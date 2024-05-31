@@ -84,6 +84,7 @@ main {
     min-height: 100%;
     border: solid 1px;
     align-items: start;
+    padding: 1.8rem;
     & header {
         color: #eee;
         padding-inline: 2rem;
