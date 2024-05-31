@@ -17,13 +17,13 @@
         if ($_filas) {
             if($_filas['codigo_tipoUsuario']==1)//Administrador
             {
-                header("location: /public/pages/principal/principal.html");   //link a la pagina del administrador
+                header("location: ../../public/pages/principal/principal.html");   //link a la pagina del administrador
             }
             else if($_filas['codigo_tipoUsuario']==2){ //cliente
-                header("location: /public/pages/principal/principal.html");   //link a la pagina del Empleado1
+                header("location: ../../public/pages/principal/principal.html");   //link a la pagina del Empleado1
             }
         } else {
-            include('../../../public/pages/login/login.html');
+            include('../../../public/pages/login/login_php.html');
             echo '
             <div style="display: flex; justify-content: center;">
             <h2>Error en la autenticacion</h2>
@@ -34,7 +34,7 @@
         mysqli_free_result($_resultado);
         mysqli_close($_conex);
     } else {
-        include('../../../public/pages/login/login.html');
+        include('../../../public/pages/login/login_php.html');
         echo '
         <div style="display: flex; justify-content: center;">
         <h2>Por favor, ingrese su usuario y contraseña</h2>
