@@ -4,7 +4,10 @@
   "description": "Proyecto final de la asignatura de Taller de Programación Web",
   "main": "main.js",
   "scripts": {
-    "start": "php -S localhost:8000 -t ."
+    "start": "npm run serve:php",
+    "dev": "npm start",
+    "serve:html": "http-server . -p 8080",
+    "server:php": "php -S localhost:8000 -t ."
   },
   "repository": {
     "type": "git",
