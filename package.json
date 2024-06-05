@@ -4,9 +4,9 @@
   "description": "Proyecto final de la asignatura de Taller de Programación Web",
   "main": "main.js",
   "scripts": {
-    "start": "npm run serve:php",
-    "dev": "npm start",
-    "serve:html": "http-server . -p 8080",
+    "start": "npm run server:php",
+    "dev": "npm run server:html",
+    "server:html": "http-server . -p 8080",
     "server:php": "php -S localhost:8000 -t ."
   },
   "repository": {
