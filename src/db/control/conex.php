@@ -1,9 +1,7 @@
 <?php
 $API_URL = "https://db-taller-web-emmanuel-rivera-g.turso.io/v2/pipeline";
 $authToken = "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTc1OTcxMDIsImlkIjoiMDJkYmNmNzQtNDA5MS00OGRlLTlkZDQtN2YzMTUzMmEwZGE4In0.ab7lh1H9omAugUK2fFgwVMHuVQixI2R5SPxqQV8CbNiDu4C5kIeOyVeIJLJ9Xb45wZxQjsduVfv12xfPOi4VDQ";
-
 $ch = null;
-
 function iniciarConexion(){
     global $ch;
     global $authToken;
