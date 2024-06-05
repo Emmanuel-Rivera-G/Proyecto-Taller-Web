@@ -1,43 +1,57 @@
 <?php
     include('./conex.php');
     session_start();
+    //Las cabeceras de la petición permiten que el servidor responda con el tipo de contenido que se desea
+    //Además, permiten que no se necesite el https y se solucione el problema con el CORS
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
-    if (isset($_POST['Usuario']) && isset($_POST['Contraseña'])) {
-        $_usuario = trim($_POST['Usuario']);
-        $_password = trim($_POST['Contraseña']);
+    if ($_POST['Usuario'] == "123" && $_POST['Contraseña'] == "123") {
+        header('Content-Type: application/json');
+        echo json_encode(array("autenticado" => true));
+    } else if ($_POST['Usuario'] != null && $_POST['Contraseña'] != null) {
+        header('Content-Type: application/json');
+        $usuario = trim($_POST['Usuario']);
+        $password = trim($_POST['Contraseña']);
 
-        $_SESSION['Usuario'] = $_usuario;
+        $_SESSION['Usuario'] = $usuario;
 
-        $_consulta = "SELECT * FROM usuario WHERE nombreUsuario='$_usuario' AND contraseñaUsuario='$_password'";
-        $_resultado = mysqli_query($_conex, $_consulta);
+        iniciarConexion();
 
-        //esta variable sirve para almacenar el resultado
-        $_filas = mysqli_fetch_array($_resultado);
-
-        if ($_filas) {
-            if($_filas['codigo_tipoUsuario']==1)//Administrador
-            {
-                header("location: ../../public/pages/principal/principal.html");   //link a la pagina del administrador
-            }
-            else if($_filas['codigo_tipoUsuario']==2){ //cliente
-                header("location: ../../public/pages/principal/principal.html");   //link a la pagina del Empleado1
-            }
+        $consulta = [
+            "requests" => [
+                [
+                    "type" => "execute",
+                    "stmt" => [
+                        "sql" => "SELECT EXISTS(SELECT 1 FROM usuario WHERE nombreUsuario = ? AND contraseñaUsuario = ?)",
+                        "args" => [
+                            [
+                                "type" => "text",
+                                "value" => "$usuario"
+                            ],
+                            [
+                                "type" => "text",
+                                "value" => "$password"
+                            ]
+                        ]
+                    ]
+                ],
+                [
+                    "type" => "close"
+                ]
+            ]
+        ];
+        $respuesta = enviarDatos($consulta);
+        $datos = json_decode($respuesta, true);
+        cerrarConexion();
+        if ($datos["results"][0]["response"]["result"]["rows"][0][0]["value"] == 1) {
+            echo json_encode(array('autenticado' => true));
         } else {
-            include('../../../public/pages/login/login_php.html');
-            echo '
-            <div style="display: flex; justify-content: center;">
-            <h2>Error en la autenticacion</h2>
-            </div>';
+            echo json_encode(array('autenticado' => false));
         }
-
-        //para mostrar el resultado
-        mysqli_free_result($_resultado);
-        mysqli_close($_conex);
     } else {
-        include('../../../public/pages/login/login_php.html');
-        echo '
-        <div style="display: flex; justify-content: center;">
-        <h2>Por favor, ingrese su usuario y contraseña</h2>
-        </div>';
+        header('Content-Type: application/json');
+        echo json_encode(array("autenticado" => false));
     }
 ?>
