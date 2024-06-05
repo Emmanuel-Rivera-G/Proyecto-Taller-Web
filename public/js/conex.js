@@ -2,7 +2,7 @@ const PUERTO_SERVIDOR = '8000';
 const RUTA_SERVIDOR = '/src/db/control/validacion.php';
 
 // URL del servidor backend php
-const URL_SERVIDOR = `http://localhost:${PUERTO_SERVIDOR}${RUTA_SERVIDOR}`;
+const URL_SERVIDOR = `https://server-php-taller-web.zeabur.app/${RUTA_SERVIDOR}`;
 
 document.getElementById('formularioAutenticacion').addEventListener('submit', function(event) {
 
