@@ -137,11 +137,20 @@
   margin-bottom: 15px;
 }
 
-#boton-agregar{
-  height: 2.8rem;
+.busqueda-empleado {
+  width: 100%;
+  & div {
+    display: inline-flex;
+    gap: 1rem;
+    width: 100%;
+  }
+}
+
+#boton-agregar, .busqueda-empleado button, #boton-buscar{
+  height: 2.7rem;
   width: 20%;
   font-size: 1.2rem;
-  border: 3px solid #4a8a4c;
+  border: 0;
   background-color: #459148;
   border-radius: .5rem;
   color: white;
@@ -150,7 +159,7 @@
   margin-bottom: 30px;
 }
 
-#boton-agregar:hover{
+#boton-agregar:hover, .busqueda-empleado button:hover{
   background-color: #ffffff;
   color: #4CAF50;
 }
