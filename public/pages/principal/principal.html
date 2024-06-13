@@ -7,37 +7,43 @@
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/sections/style_usuarios.css">
     <link rel="stylesheet" href="../../css/sections/style_planilla.css">
-    <link rel="stylesheet" href="../../css/sections/style_contratos.css">
+    <link rel="stylesheet" href="../../css/sections/style_contratos.css"> 
+    <script defer src="../../js/main.js"></script>
+    <script defer src="../../js/usuarios.js"></script>
 </head>
 <body>
     <header>
         <button title="menu" id="btn-menu">
-            <img src="../../assets/icons/menu/menu-icon.webp" alt="menu">
+            <img src="../../assets/icons/menu/menu-icon.webp" alt="menu" width="30">
         </button>
         <h2>Sistema de Planillas de Pago</h2>
         <div class="logo">
-            <img src="" alt="">
+            <img src="../../assets/icons/login/icon-user.png" width="10" alt="">
             Administardor
         </div>
     </header>
-    <section class="area-trabajo">
-        <menu>
-            <section>
-                <img src="" alt="icon">
-                Nombre Usuario
-            </section>
-            <li><button class="btn-usuario">Usuarios</button></li>
-            <li><button class="btn-planilla">Planillas</button></li>
-            <li><button class="btn-contrato">Contratos</button></li>
-        </menu>
-        <main id="usuarios">
-            <div class="busqueda-empleado" hidden>
-                <div class="titulos-trabajador"><h3>Buscar Trabajador</h3></div>
-                <input type="text" id="barra-busqueda" placeholder="Ingrese nombre del trabajador" autocomplete="off">
-                <input type="submit" id="boton-buscar" value="Buscar">
-                <button class="btn-crear-usuario">Crear Usuario</button>
+    <main class="area-trabajo">
+        <dialog class="modal-menu">
+            <menu>
+                <section>
+                    <img src="../../assets/icons/login/icon-user.png" width="30" alt="icon">
+                    <p>Nombre Usuario</p>
+                </section>
+                <li><button class="btn-usuario">Usuarios</button></li>
+                <li><button class="btn-planilla">Planillas</button></li>
+                <li><button class="btn-contrato">Contratos</button></li>
+            </menu>
+        </dialog>
+        <section id="usuarios">
+            <div class="busqueda-empleado">
+                <h3 class="titulos-trabajador">Buscar Trabajador</h3>
+                <div>
+                    <input type="text" id="barra-busqueda" placeholder="Ingrese nombre del trabajador" autocomplete="off">
+                    <button id="boton-buscar">Buscar</button>
                 </div>
-                <div class="titulos-trabajador">
+                <button class="btn-crear-usuario">Crear Usuario</button>
+            </div>
+            <div class="titulos-trabajador">
                 <h3>Lista de Empleados</h3>
                 <table>
                     <thead>
@@ -113,8 +119,8 @@
                     <input type="date" id="fecha-fin">
                 </form>    
             </div>
-        </main>
-        <main id="planillas" hidden>
+        </section>
+        <section id="planillas" hidden>
             <div class="container">
                 <div class="title">Búsqueda Planilla</div>
                 <form>
@@ -178,8 +184,8 @@
                     </table>
                 </div>
             </div>
-        </main>
-        <main id="contratos" hidden>
+        </section>
+        <section id="contratos" hidden>
             <div class="container">
                 <div class="section">
                     <div class="search-box">
@@ -236,9 +242,7 @@
                     </table>
                 </div>
             </div>
-        </main>
-    </section>
-    <script src="../../js/main.js"></script>
-    <script src="../../js/usuarios.js"></script>
+        </section>
+    </main>
 </body>
 </html>
