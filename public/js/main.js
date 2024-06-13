@@ -3,10 +3,13 @@ const planillas = document.querySelector('#planillas');
 const contratos = document.querySelector('#contratos');
 
 document.querySelector('#btn-menu').addEventListener('click', function () {
+    const modal = document.querySelector('.modal-menu');
     const menu = document.querySelector('menu');
     if (menu.hasAttribute('hidden')) {
+        modal.style.display = 'block';
         menu.removeAttribute('hidden');
     } else {
+        modal.style.display = 'none';
         menu.setAttribute('hidden', '');
     }
 });
