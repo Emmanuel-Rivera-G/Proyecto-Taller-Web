@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Planillas de Pago</title>
     <link rel="stylesheet" href="../../css/styles.css">
-    <!-- <link rel="stylesheet" href="../../css/sections/style_usuarios.css">
-    <link rel="stylesheet" href="../../css/sections/style_planilla.css">
+    <link rel="stylesheet" href="../../css/sections/style_usuarios.css">
+    <!-- <link rel="stylesheet" href="../../css/sections/style_planilla.css">
     <link rel="stylesheet" href="../../css/sections/style_contratos.css">  -->
     <!-- <link
     rel="stylesheet"
@@ -42,7 +42,16 @@
                 width="30" 
                 alt="icon"
                 >
-                <p>Nombre Usuario</p>
+                <div>
+                    <p>Nombre Usuario</p>
+                    <p>
+                        <button 
+                        type="button"
+                        class="cerrar-sesion"
+                        id="btn-cerrar-sesion"
+                        >Cerrar Sesión</button>
+                    </p>
+                </div>
             </header>
             <ul class="menu-list-button">
                 <li>
@@ -76,13 +85,13 @@
                 <h3>Lista de Empleados</h3>
                 <table>
                     <thead>
-                    <tr>
-                        <th>N`</th>
-                        <th>Nombres</th>
-                        <th>Email</th>
-                        <th>Teléfono</th>
-                        <th>Estado</th>
-                    </tr>
+                        <tr>
+                            <th>N`</th>
+                            <th>Nombres</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Estado</th>
+                        </tr>
                     </thead>
                     <tbody id="tabla-trabajadores-body">
                         <tr>
@@ -114,14 +123,14 @@
                     <fieldset>
                         <legend>Datos del Trabajador</legend>
                         <label>
-                            <strong>Datos del Trabajador:</strong>
+                            <strong>Nombre completo:</strong>
                             <input 
                             placeholder="Ingrese nombre completo"
                             id="nombre-de-empleado"
                             required
                             >
                         </label>
-                        <label for="usuario">
+                        <label>
                             <strong>Usuario:</strong>
                             <input
                             placeholder="Ingrese un nombre de usuario"
@@ -129,7 +138,7 @@
                             required
                             >
                         </label>
-                        <label for="contraseña">
+                        <label>
                             <strong>Contraseña Predeterminada:</strong>
                             <input
                             type="password"
@@ -138,7 +147,7 @@
                             required
                             >
                         </label>
-                        <label for="rol-empleado">
+                        <label>
                             <strong>Rol:</strong>
                             <select
                             name="rol-empleado"
@@ -151,7 +160,7 @@
                             </select>
                         </label>
                     </fieldset>
-                    <fieldset>
+                    <fieldset id="fechas-usuario">
                         <legend>Fechas de Autorización del Usuario</legend>
                         <label>
                             <strong>Fecha de Inicio:</strong>
