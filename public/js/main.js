@@ -2,14 +2,17 @@ const usuarios = document.querySelector('#usuarios');
 const planillas = document.querySelector('#planillas');
 const contratos = document.querySelector('#contratos');
 
+document.querySelector('#btn-cerrar-sesion').addEventListener('click', function () {
+    window.location.href = "../../../index.html";
+});
+
 document.querySelector('#btn-menu').addEventListener('click', function () {
-    const modal = document.querySelector('.modal-menu');
     const menu = document.querySelector('menu');
     if (menu.hasAttribute('hidden')) {
-        modal.style.display = 'block';
+        menu.style.display = 'grid';
         menu.removeAttribute('hidden');
     } else {
-        modal.style.display = 'none';
+        menu.style.display = 'none';
         menu.setAttribute('hidden', '');
     }
 });
@@ -32,11 +35,6 @@ document.querySelector('.btn-planilla').addEventListener('click', function () {
 });
 document.querySelector('.btn-contrato').addEventListener('click', function () {
     comprobarSection(contratos, usuarios, planillas);
-});
-
-document.querySelector('.btn-crear-usuario').addEventListener('click', function () {
-    const ventana = document.querySelector('#ventana-trabajadores');
-    ventana.classList.toggle('show');
 });
 
 document.querySelector('.abrir-ventana').addEventListener('click', function () {
