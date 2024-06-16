@@ -151,6 +151,63 @@ main {
     }
 }
 
+section {
+    padding-inline: 10rem;
+  
+    button {
+      height: 2.7rem;
+      background-color: #4CAF50;
+      border-radius: .2rem;
+      padding-inline: 1rem;
+      max-width: 200px;
+      color: rgb(211, 190, 171);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+  
+      &:hover{
+        background-color: white;
+        color:#4CAF50;
+      }
+    }
+  
+    form {
+      input {
+        height: 2.8rem;
+        width: 100%;
+        border: 0;
+        border-radius: .5rem;
+        font-size: 1rem;
+        padding-left: 1rem;
+      }
+    }
+  
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    
+      tbody tr:nth-child(even) {
+        background-color: light-dark(#f2f2f2, #476264);
+      }
+    
+      th {
+        background-color: #101c52;
+        color: white;
+      }
+    
+      th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+    
+      tbody tr:hover {
+        color: #333;
+        background-color: light-dark(#ddd, #8cf3ba);
+      }
+    }
+  }
+
 footer {
     display: flex;
     justify-content: center;
