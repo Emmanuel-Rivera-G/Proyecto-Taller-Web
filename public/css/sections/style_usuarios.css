@@ -66,10 +66,6 @@ form#creacion-usuario{
         font-size: 1.05rem;
         padding-left: 1rem;
       }
-
-      select {
-        background-color: light-dark(#eee, #3d3d3d);
-      }
     }
   }
 

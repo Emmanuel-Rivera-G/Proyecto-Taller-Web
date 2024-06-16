@@ -13,7 +13,7 @@ header {
     height: 10dvh;
     display: grid;
     grid-template-columns: auto 1fr auto;
-    background-color: rgba(25, 131, 176, 1);
+    background-color: #1983b0;
     padding-right: 2%;
     align-content: center;
     gap: 1rem;
@@ -58,7 +58,7 @@ header button {
     grid-template-columns: auto;
     width: auto;
     min-width: 180px;
-    background-color: rgba(29, 37, 44, 1);
+    background-color: #1d252c;
     top: 10%;
     min-height: 90dvh;
     box-sizing: border-box;
@@ -73,6 +73,10 @@ header button {
         justify-content: center;
         align-items: center;
         background-color: transparent;
+
+        p {
+            color: #eee;
+        }
 
         .cerrar-sesion {
             font-size: small;
@@ -146,8 +150,8 @@ main {
         gap: 1rem;
     }
 
-    form input {
-        background-color: light-dark(rgb(202, 210, 227), #414141);
+    form input, select {
+        background-color: light-dark(#c4c4c4, #414141);
     }
 }
 
@@ -187,7 +191,7 @@ section {
       border-collapse: collapse;
     
       tbody tr:nth-child(even) {
-        background-color: light-dark(#f2f2f2, #476264);
+        background-color: light-dark(#a0b3ae, #476264);
       }
     
       th {
@@ -203,7 +207,7 @@ section {
     
       tbody tr:hover {
         color: #333;
-        background-color: light-dark(#ddd, #8cf3ba);
+        background-color: light-dark(#acaaaa, #8cf3ba);
       }
     }
   }
