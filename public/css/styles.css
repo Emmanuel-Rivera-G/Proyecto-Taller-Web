@@ -70,7 +70,19 @@ header button {
     header {
         flex-direction: row;
         height: auto;
+        justify-content: center;
+        align-items: center;
         background-color: transparent;
+
+        .cerrar-sesion {
+            font-size: small;
+
+            &:hover {
+                scale: 1;
+                background-color: transparent;
+                color: light-dark(#09f, #05d);
+            }
+        }
     }
 
     ul {
@@ -132,6 +144,10 @@ main {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+    }
+
+    form input {
+        background-color: light-dark(rgb(202, 210, 227), #414141);
     }
 }
 
