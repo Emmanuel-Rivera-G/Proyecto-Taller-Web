@@ -1,297 +1,115 @@
-#usuarios h3{
-  font-size: 1.2em;
-  padding-bottom: 15px;
-}
 
-#barra-busqueda{
-  background-color: rgb(202, 210, 227);
-  height: 2.8rem;
-  width: 55rem;
-  border: 0;
-  border-radius: .5rem;
-  padding-left: 1rem;
-  font-size: 1rem;
-  margin-bottom: 30px;
+
+.busqueda-empleado {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2%;
+  width: 100%;
+
+  h3.titulos-trabajador{
+    font-size: 1.2em;
+  }
+
+  form#busqueda-empleado{
+    fieldset {
+      display: flex;
+      flex-direction: row;
+    }
+  }
 }
 
 .creador-usuario{
   display: grid;
   grid-template-areas: "primero segundo"
-  "tercero tercero"
-  "cuarto cuarto"
-  "quinto quinto";
+    "tercero tercero"
+    "cuarto cuarto"
+    "quinto quinto";
   grid-template-columns: minmax(20px, 1fr) minmax(20px, 1fr);
-}
 
-.creador-usuario h2 {
-  grid-area: primero;
-}
+  h3 {
+    grid-area: primero;
+  }
 
-.abrir-ventana {
-  grid-area: segundo;
-}
-
-#boton-buscar, .btn-crear-usuario{
-  background-color: #4CAF50;
-  border: 3px solid #4CAF50;
-  border-radius: .5rem;
-  height: 2.8rem;
-  width: 14rem;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#boton-buscar:hover, .btn-crear-usuario:hover{
-  background-color: white;
-  color:#4CAF50;
-}
-
-#usuarios table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-#usuarios th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
-#usuarios thead {
-  background-color: #f2f2f2;
-}
-
-#usuarios tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
-
-#usuarios tbody tr:hover {
-  background-color: #ddd;
-}
-
-#usuarios th {
-  background-color: #101c52;
-  color: white;
-}
-
-/*PLANILLA*/
-#creacion-usuario{
-  grid-area: tercero;
-  display: grid;
-  font-size: 1rem;
-  padding-left: 30px;
-  margin-bottom: 20px;
-}
-
-.creador-usuario h3 {
-  grid-area: cuarto;
-}
-
-.creador-usuario h2 {
-  font-size: 1.2rem;
-}
-
-#nombre-de-empleado{
-  background-color: rgb(202, 210, 227);
-  border: 0;
-  border-radius: .5rem;
-  height: 2.1rem;
-  width: auto;
-  font-size: 1.05rem;
-  padding-left: 1rem;
-  margin-bottom: 15px;
-}
-
-#usuario{
-  background-color: rgb(202, 210, 227);
-  border: 0;
-  border-radius: .5rem;
-  height: 2.1rem;
-  width: auto;
-  font-size: 1.05rem;
-  padding-left: 1rem;
-  margin-bottom: 15px;
-}
-
-#contraseña{
-  background-color: rgb(202, 210, 227);
-  border: 0;
-  border-radius: .5rem;
-  height: 2.1rem;
-  width: auto;
-  font-size: 1.05rem;
-  padding-left: 1rem;
-  margin-bottom: 15px;
-}
-
-#rol-empleado{
-  background-color: rgb(202, 210, 227);
-  border: 0;
-  border-radius: .5rem;
-  height: 2.1rem;
-  width: auto;
-  font-size: 1.05rem;
-  padding-left: 1rem;
-  margin-bottom: 15px;
-}
-
-.busqueda-empleado {
-  width: 100%;
-  & div {
-    display: inline-flex;
-    gap: 1rem;
-    width: 100%;
+  .abrir-ventana {
+    grid-area: segundo;
+    justify-self: end;
   }
 }
 
-#boton-agregar, .busqueda-empleado button, #boton-buscar{
-  height: 2.7rem;
-  width: 20%;
-  font-size: 1.2rem;
-  border: 0;
-  background-color: #459148;
-  border-radius: .5rem;
-  color: white;
-  cursor: pointer;
-  transition: 0.4s;
-  margin-bottom: 30px;
-}
-
-#boton-agregar:hover, .busqueda-empleado button:hover{
-  background-color: #ffffff;
-  color: #4CAF50;
-}
-
-#fechas-usuario{
-  grid-area: quinto;
-  text-align: center;
-  font-size: 1.2rem;
-  margin-top: 20px;
-}
-
-#fecha-inicio{
-  margin-right: 100px;
-  height: 2.3rem;
-  width: 10rem;
-  text-align: center;
-  font-size: 1rem;
-  border: 0;
-  border-radius: .8rem;
-  background-color: rgb(202, 210, 227);
-}
-
-#fecha-fin{
-  margin-right: 100px;
-  height: 2.3rem;
-  width: 10rem;
-  text-align: center;
-  font-size: 1rem;
-  border: 0;
-  border-radius: .8rem;
-  background-color: rgb(202, 210, 227);
-}
-
-.ventana{
-  box-sizing: border-box;
-}
-
-.abrir-ventana {
-  height: 2.4rem;
-  width: 9rem;
-  background-color: #333b7d;
-  border: 3px solid #333b7d;
-  border-radius: 0.8rem;
-  color: white;
-  font-size: .9rem;
-  cursor: pointer;
-  transition: 0.4s;
-  margin-left: 400px;
-}
-
-
-.abrir-ventana:hover{
-  background-color: white;
-  color: #333b7d;
-}
-
-.ventana-trabajadores{
+/* Formulario principal*/
+form#creacion-usuario{
+  grid-area: tercero;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  height: 100vh;
-  width: 100vw;
-}
+  flex-direction: column;
+  font-size: 1rem;
+  
+  gap: 4rem;
 
-.show {
-  pointer-events: auto;
-  opacity: 1;
+  fieldset {
+    legend {
+      font-size: 1.2rem;
+      margin: 1.2rem;
+      margin-left: 0;
+    }
+  
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+  
+      input, select {
+        border: 0;
+        border-radius: .5rem;
+        height: 2.8rem;
+        width: auto;
+        font-size: 1.05rem;
+        padding-left: 1rem;
+      }
+
+      select {
+        background-color: light-dark(#eee, #3d3d3d);
+      }
+    }
+  }
+
+  fieldset#fechas-usuario{
+    grid-area: quinto;
+  }
 }
 
 dialog.modal{
-  background-color: white;
-  width: 65rem;
-  height: 30rem;
-  max-width: 100%;
-  padding: 30px 50px;
+  background-color: light-dark(#f2f2f2, #333);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 60rem;
+  padding: 2.5rem;
   border-radius: 1rem;
-  box-shadow: 0 2px 4px rgb(0, 0, 0, 0.2);
-  text-align: center;
-  top: 10%;
-  left: 15%;
-}
+  box-shadow: 0 2px 4px #000000c2;
 
-dialog.modal h1 {
-  margin: 0;
-}
+  h3 {
+    margin-block: 1rem;
+  }
 
-dialog.modal p {
-  opacity: 0.7;
-  font-size: 14px;
-}
-dialog.modal button {
-  margin-top: 1rem;
-  background-color: #4CAF50;
-  border: 3px solid #4CAF50;
-  border-radius: .5rem;
-  height: 2.8rem;
-  width: 14rem;
-  color: white;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-dialog.modal::backdrop {
-  background-color: #33344430;
-}
+  form {
+    margin-bottom: 2rem;
+  }
 
-#barra-ventana{
-  background-color: rgb(202, 210, 227);
-  height: 2.8rem;
-  width: 45rem;
-  border: 0;
-  border-radius: .5rem;
-  padding-left: 1rem;
-  font-size: 1rem;
-  margin-bottom: 30px;
-}
+  table {
+    margin-bottom: 1.5rem;
+  }
 
-#b-buscar{
-  height: 2.8rem;
-  width: 11rem;
-  font-size: 1.2rem;
-  border: 3px solid #4CAF50;
-  background-color: #4CAF50;
-  border-radius: .5rem;
-  color: white;
-  cursor: pointer;
-  transition: 0.4s;
-  margin-bottom: 30px;
-}
+  fieldset {
+    legend {
+      font-size: 1.2rem;
+      margin: 1.2rem;
+      margin-left: 0;
+    }
+  }
 
-#b-buscar:hover{
-  background-color: white;
-  color: #4CAF50;
+  &::backdrop {
+    background-color: #1b1b1fb9;
+  }
 }
