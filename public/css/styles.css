@@ -156,11 +156,15 @@ main {
 }
 
 section {
-    padding-inline: 10rem;
+    padding-inline: 3rem !important;
+
+    h3{
+      font-size: 1.2em;
+    }
   
     button {
       height: 2.7rem;
-      background-color: #4CAF50;
+      background-color: #38833b;
       border-radius: .2rem;
       padding-inline: 1rem;
       max-width: 200px;
@@ -176,6 +180,10 @@ section {
     }
   
     form {
+      fieldset {
+        display: flex;
+      }
+
       input {
         height: 2.8rem;
         width: 100%;
@@ -216,7 +224,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(32, 77, 97);
+    background-color: light-dark(#429bc2, #204d61);
     width: 100%;
     height: 10vh;
 }

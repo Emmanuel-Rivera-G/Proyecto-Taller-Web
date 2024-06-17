@@ -3,15 +3,13 @@
   flex-direction: column;
   gap: 1rem;
   padding: 2%;
+  padding-inline: 3rem;
   width: 100%;
 
-  h3.titulos-trabajador{
-    font-size: 1.2em;
-  }
+  
 
   form#busqueda-empleado{
     fieldset {
-      display: flex;
       flex-direction: row;
     }
   }
