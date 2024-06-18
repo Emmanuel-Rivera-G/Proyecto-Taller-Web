@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Planillas de Pago</title>
+    <link rel="shortcut icon" href="../../assets/icons/icon-planilla-pago.png" type="image/png">
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/sections/style_usuarios.css">
     <link rel="stylesheet" href="../../css/sections/style_planilla.css">
     <link rel="stylesheet" href="../../css/sections/style_contratos.css"> 
-    <!-- <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.min.css"
-    /> -->
     <script defer src="../../js/main.js"></script>
     <script defer src="../../js/usuarios.js"></script>
 </head>
@@ -67,11 +64,12 @@
         </menu>
         <section id="usuarios">
             <article class="busqueda-empleado">
-                <h3 class="titulos-trabajador">Buscar Trabajador</h3>
+                <h3>Buscar Trabajador</h3>
                 <form id="busqueda-empleado">
                     <fieldset>
                         <input
                         id="barra-busqueda"
+                        name="barra-busqueda"
                         placeholder="Ingrese nombre del trabajador"
                         autocomplete="off"
                         >
@@ -94,7 +92,7 @@
                         </tr>
                     </thead>
                     <tbody id="tabla-trabajadores-body">
-                        <tr>
+                        <!-- <tr>
                             <td>1</td>
                             <td>Juan</td>
                             <td>Pérez</td>
@@ -107,14 +105,14 @@
                             <td>González</td>
                             <td>Rodríguez</td>
                             <td>1988-12-20</td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
                 <button type="button" class="btn-crear-usuario">
                     Agregar Empleado
                 </button>
             </section>
-            <section class="creador-usuario">
+            <section class="creador-usuario" hidden>
                 <h3>Crear Usuario</h3>
                 <button class="abrir-ventana">
                     <strong>Trabajadores</strong>
@@ -171,9 +169,14 @@
                             <input type="date" id="fecha-fin">
                         </label>
                     </fieldset>
-                    <button type="submit" id="boton-agregar">
-                        <strong>Crear Usuario</strong>
-                    </button>
+                    <div class="btns-crear-usuario">
+                        <button type="submit" id="btn-agregar">
+                            <strong>Crear Usuario</strong>
+                        </button>
+                        <button type="button" id="btn-regresar">
+                            <strong>Regresar</strong>
+                        </button>
+                    </div>
                 </form>
             </section>
             <dialog class="modal">
@@ -262,26 +265,21 @@
                 <form>
                     <fieldset>
                         <legend class="title">Listado de Contratos Planillas</legend>
-                        <article class="form-group">
-                            <label>
-                                Nombre del Usuario
-                                <input
-                                 type="text"
-                                 id="username" 
-                                 name="username" 
-                                 placeholder="Ingrese el nombre del usuario" 
-                                 required
-                                >
-                            </label>
-                        </article>
-                        <article class="form-group">
-                            <button type="submit">
-                                Buscar
-                            </button>
-                        </article>
+                        <label>
+                            Buscar
+                            <input
+                                type="text"
+                                id="username" 
+                                name="username" 
+                                placeholder="Ingrese el nombre del usuario" 
+                                required
+                            >
+                        </label>
+                        <button type="submit">
+                            Buscar
+                        </button>
                     </fieldset>
                 </form>
-                <article class="table-container">
                     <table>
                         <thead>
                             <tr>
@@ -314,14 +312,13 @@
                             </tr>
                         </tbody>
                     </table>
-                </article>
             </article>
         </section>
         <section id="contratos" hidden>
             <section class="section">
                 <form class="search-box">
                     <fieldset>
-                        <legend>Búsqueda por Nombre:</legend>           
+                        <legend><strong>Búsqueda por Nombre:</strong></legend>
                         <label>
                             <input id="searchByContract" placeholder="Buscar por nombre...">
                         </label>
@@ -369,35 +366,33 @@
                         </button>
                     </fieldset>
                 </form>
-                <article>
-                    <h3>Lista de Contratos</h3> 
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Año</th>
-                                <th>Mes</th>
-                                <th>Trabajador</th>
-                                <th>Inicio Contrato</th>
-                                <th>Fin Contrato</th>
-                                <th>Cargo</th>
-                                <th>Sueldo</th>
-                                <th>Imprimir</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2023</td>
-                                <td>Enero</td>
-                                <td>Trabajador 1</td>
-                                <td>01/01/2023</td>
-                                <td>31/12/2023</td>
-                                <td>Gerente</td>
-                                <td>$3000</td>
-                                <td><button onclick="printDocument('doc1.pdf')">Imprimir</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </article>
+                <h3>Lista de Contratos</h3> 
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Mes</th>
+                            <th>Trabajador</th>
+                            <th>Inicio Contrato</th>
+                            <th>Fin Contrato</th>
+                            <th>Cargo</th>
+                            <th>Sueldo</th>
+                            <th>Imprimir</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2023</td>
+                            <td>Enero</td>
+                            <td>Trabajador 1</td>
+                            <td>01/01/2023</td>
+                            <td>31/12/2023</td>
+                            <td>Gerente</td>
+                            <td>$3000</td>
+                            <td><button onclick="printDocument('doc1.pdf')">Imprimir</button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
         </section>
     </main>
