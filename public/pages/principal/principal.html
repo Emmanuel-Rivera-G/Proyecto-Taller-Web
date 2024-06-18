@@ -6,8 +6,8 @@
     <title>Sistema de Planillas de Pago</title>
     <link rel="stylesheet" href="../../css/styles.css">
     <link rel="stylesheet" href="../../css/sections/style_usuarios.css">
-    <!-- <link rel="stylesheet" href="../../css/sections/style_planilla.css">
-    <link rel="stylesheet" href="../../css/sections/style_contratos.css">  -->
+    <link rel="stylesheet" href="../../css/sections/style_planilla.css">
+    <link rel="stylesheet" href="../../css/sections/style_contratos.css"> 
     <!-- <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fluid.classless.min.css"
@@ -224,7 +224,7 @@
         </section>
         <section id="planillas" hidden>
             <article class="container">
-                <h1 class="title">Búsqueda Planilla</h1>
+                <h3 class="title">Búsqueda Planilla</h3>
                 <form>
                     <fieldset>
                         <legend>Búsqueda por Fecha:</legend>
@@ -258,7 +258,7 @@
                     </fieldset>
                 </form>
             </article>
-            <section class="container">
+            <article class="container">
                 <form>
                     <fieldset>
                         <legend class="title">Listado de Contratos Planillas</legend>
@@ -281,7 +281,7 @@
                         </article>
                     </fieldset>
                 </form>
-                <section class="table-container">
+                <article class="table-container">
                     <table>
                         <thead>
                             <tr>
@@ -314,15 +314,15 @@
                             </tr>
                         </tbody>
                     </table>
-                </section>
-            </section>
+                </article>
+            </article>
         </section>
         <section id="contratos" hidden>
             <section class="section">
                 <form class="search-box">
                     <fieldset>
+                        <legend>Búsqueda por Nombre:</legend>           
                         <label>
-                            <legend>Búsqueda por Nombre:</legend>                  
                             <input id="searchByContract" placeholder="Buscar por nombre...">
                         </label>
                         <button type="submit" onclick="searchByContract()">
@@ -333,7 +333,7 @@
                 <form class="search-box">
                     <fieldset>
                         <legend>
-                            <h3>Búsqueda por Fecha:</h3>
+                            Búsqueda por Fecha:
                         </legend>
                         <label>
                             <h4>Fecha Inicio:</h4>
@@ -359,11 +359,15 @@
             </section>
             <section class="section">
                 <form class="search-box">
-                    <label>
-                        <h3>Buscar</h3>
-                        <input type="text" id="additionalFilter" placeholder="nombre...">
-                    </label>
-                    <button type="submit" onclick="additionalFilter()">Buscar</button>
+                    <fieldset>
+                        <label>
+                            <h3>Buscar</h3>
+                            <input id="additionalFilter" placeholder="nombre...">
+                        </label>
+                        <button type="submit" onclick="additionalFilter()">
+                            Buscar
+                        </button>
+                    </fieldset>
                 </form>
                 <article>
                     <h3>Lista de Contratos</h3> 
