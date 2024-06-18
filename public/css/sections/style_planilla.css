@@ -7,7 +7,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
   box-sizing: border-box;
 
-  .table-container {
+  table {
     tr:hover {
       color: light-dark(#333, #eee);
       background-color: light-dark(#eee, #333);

@@ -58,7 +58,7 @@ header button {
   position: relative;
   grid-template-columns: auto;
   width: auto;
-  min-width: 180px;
+  min-width: 220px;
   background-color: #1d252c;
   top: 10%;
   min-height: 90dvh;
@@ -75,8 +75,12 @@ header button {
     align-items: center;
     background-color: transparent;
 
-    p {
+    div {
       color: #eee;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      justify-content: center;
     }
 
     .cerrar-sesion {
@@ -94,9 +98,15 @@ header button {
     flex-direction: column;
   }
 
-  header img {
-    height: 20px;
-    width: 20px;
+  header {
+    img {
+      height: 40px;
+      width: 40px;
+    }
+    button {
+      margin: 0;
+      padding: 0;
+    }
   }
 
   header,
@@ -136,7 +146,7 @@ main {
   font-family: Arial, Helvetica, sans-serif;
   color: light-dark(#333, #eee);
 
-  section {
+  section, article {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -145,11 +155,10 @@ main {
     gap: 1.3rem;
   }
 
-  article {
+  article, section {
     display: flex;
     flex-direction: column;
-    padding: 1.3rem;
-    gap: 1.2rem;
+    gap: 1.3rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
     box-sizing: border-box;
@@ -179,7 +188,7 @@ section {
     border-radius: 0.2rem;
     padding-inline: 1rem;
     max-width: 200px;
-    color: rgb(211, 190, 171);
+    color: rgb(255, 241, 227);
     font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
@@ -222,6 +231,7 @@ section {
     width: 100%;
     border-collapse: collapse;
     overflow-x: auto;
+    overflow-y: auto;
 
     tbody tr:nth-child(even) {
       background-color: light-dark(#a0b3ae, #476264);

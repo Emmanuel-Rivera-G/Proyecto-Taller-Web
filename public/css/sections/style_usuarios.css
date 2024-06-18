@@ -30,6 +30,11 @@
     grid-area: segundo;
     justify-self: end;
   }
+
+  .btns-crear-usuario {
+    display: inline-flex;
+    justify-content: space-between;
+  }
 }
 
 /* Formulario principal*/
