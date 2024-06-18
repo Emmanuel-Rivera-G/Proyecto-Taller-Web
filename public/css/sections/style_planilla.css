@@ -1,72 +1,16 @@
-#planillas body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 20px;
-}
-
 #planillas .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 20px auto;
-    box-sizing: border-box;
-}
+  display: flex;
+  flex-direction: column;
+  padding: 1.3rem;
+  gap: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.301);
+  box-sizing: border-box;
 
-#planillas .title {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-#planillas .form-group {
-    margin-bottom: 15px;
-}
-
-#planillas label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-#planillas input[type="number"], input[type="month"], input[type="text"], button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-#planillas button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-#planillas button:hover {
-    background-color: #0056b3;
-}
-
-.table-container {
-    overflow-x: auto;
-    margin-top: 20px;
-}
-
-#planillas table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 800px; /*desplazamiento horizontal*/
-}
-
-#planillas th, td {
-    padding: 10px;
-    border: 1px solid #ccc;
-    text-align: left;
-}
-
-#planillas th {
-    background-color: #f8f8f8;
+  .table-container {
+    tr:hover {
+      color: light-dark(#333, #eee);
+      background-color: light-dark(#eee, #333);
+    }
+  }
 }
