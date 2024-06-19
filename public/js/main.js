@@ -1,6 +1,12 @@
+import { USER } from './USERDATA.js';
+
 const usuarios = document.querySelector('#usuarios');
 const planillas = document.querySelector('#planillas');
 const contratos = document.querySelector('#contratos');
+
+const nombreUsuario = document.querySelector('#nombreUsuario');
+
+nombreUsuario.innerHTML = USER[0].usuario;
 
 document.querySelector('#btn-cerrar-sesion').addEventListener('click', function () {
     window.location.href = "../../../index.html";
