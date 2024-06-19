@@ -6,7 +6,7 @@ const contratos = document.querySelector('#contratos');
 
 const nombreUsuario = document.querySelector('#nombreUsuario');
 
-nombreUsuario.innerHTML = USER[0].usuario;
+nombreUsuario.innerHTML = USER[USER.length - 1].usuario;
 
 
 console.log(USER);
