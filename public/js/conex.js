@@ -31,7 +31,16 @@ document.getElementById('formularioAutenticacion').addEventListener('submit', fu
             }
         })
         .catch(error => {
-            console.error('Error en la solicitud:', error);
+            let form = document.querySelector('.contenedor__signin-form')
+            let span = document.createElement('span')
+            span.style.fontSize = ".8rem"
+            span.style.color = "red"
+            if (error) {
+                span.innerText = new Error("El usuario o la contraseña son incorrectos").message
+            }
+            if (form.lastChild.innerText != span.innerText) {
+                form.appendChild(span)
+            }
         });
     }
 });
