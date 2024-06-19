@@ -1,98 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sistema de Planillas de Pago</title>
-    <link rel="shortcut icon" href="../../assets/icons/icon-planilla-pago.png" type="image/png">
-    <link rel="stylesheet" href="../../css/styles.css">
-    <link rel="stylesheet" href="../../css/sections/style_usuarios.css">
-    <link rel="stylesheet" href="../../css/sections/style_planilla.css">
-    <link rel="stylesheet" href="../../css/sections/style_contratos.css"> 
+    <link
+      rel="shortcut icon"
+      href="../../assets/icons/icon-planilla-pago.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/sections/style_usuarios.css" />
+    <link rel="stylesheet" href="../../css/sections/style_planilla.css" />
+    <link rel="stylesheet" href="../../css/sections/style_contratos.css" />
     <script defer src="../../js/main.js"></script>
     <script defer src="../../js/usuarios.js"></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <button title="menu" id="btn-menu">
-            <img
-            src="../../assets/icons/menu/menu-icon.webp"
-            alt="menu"
-            width="30"
-            >
-        </button>
-        <h2>Sistema de Planillas de Pago</h2>
-        <figure class="usuario">
-            <img
-            src="../../assets/icons/login/icon-user.png"
-            width="20"
-            alt=""
-            >
-            Administardor
-        </figure>
+      <button title="menu" id="btn-menu">
+        <img
+          src="../../assets/icons/menu/menu-icon.webp"
+          alt="menu"
+          width="30"
+        />
+      </button>
+      <h2>Sistema de Planillas de Pago</h2>
+      <figure class="usuario">
+        <img src="../../assets/icons/login/icon-user.png" width="20" alt="" />
+        Administardor
+      </figure>
     </header>
     <main class="area-trabajo">
-        <menu class="modal-menu">
-            <header>
-                <img 
-                src="../../assets/icons/login/icon-user.png" 
-                width="30" 
-                alt="icon"
-                >
-                <div>
-                    <p>Nombre Usuario</p>
-                    <p>
-                        <button 
-                        type="button"
-                        class="cerrar-sesion"
-                        id="btn-cerrar-sesion"
-                        >Cerrar Sesión</button>
-                    </p>
-                </div>
-            </header>
-            <ul class="menu-list-button">
-                <li>
-                    <button type="button" class="btn-usuario">Usuarios</button>
-                </li>
-                <li>
-                    <button type="button" class="btn-planilla">Planillas</button>
-                </li>
-                <li>
-                    <button type="button" class="btn-contrato">Contratos</button>
-                </li>
-            </ul>
-        </menu>
-        <section id="usuarios">
-            <article class="busqueda-empleado">
-                <h3>Buscar Trabajador</h3>
-                <form id="busqueda-empleado">
-                    <fieldset>
-                        <input
-                        id="barra-busqueda"
-                        name="barra-busqueda"
-                        placeholder="Ingrese nombre del trabajador"
-                        autocomplete="off"
-                        >
-                        <button type="submit" id="boton-buscar">
-                            Buscar
-                        </button>
-                    </fieldset>
-                </form>
-            </article>
-            <section class="titulos-trabajador">
-                <h3>Lista de Empleados</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>N`</th>
-                            <th>Nombres</th>
-                            <th>Email</th>
-                            <th>Teléfono</th>
-                            <th>Estado</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tabla-trabajadores-body">
-                        <!-- <tr>
+      <menu class="modal-menu">
+        <header>
+          <img
+            src="../../assets/icons/login/icon-user.png"
+            width="30"
+            alt="icon"
+          />
+          <div>
+            <p>Nombre Usuario</p>
+            <p>
+              <button
+                type="button"
+                class="cerrar-sesion"
+                id="btn-cerrar-sesion"
+              >
+                Cerrar Sesión
+              </button>
+            </p>
+          </div>
+        </header>
+        <ul class="menu-list-button">
+          <li>
+            <button type="button" class="btn-usuario">Usuarios</button>
+          </li>
+          <li>
+            <button type="button" class="btn-planilla">Planillas</button>
+          </li>
+          <li>
+            <button type="button" class="btn-contrato">Contratos</button>
+          </li>
+        </ul>
+      </menu>
+      <section id="usuarios">
+        <article class="busqueda-empleado">
+          <h3>Buscar Trabajador</h3>
+          <form id="busqueda-empleado">
+            <fieldset>
+              <input
+                id="barra-busqueda"
+                name="barra-busqueda"
+                placeholder="Ingrese nombre del trabajador"
+                autocomplete="off"
+              />
+              <button type="submit" id="boton-buscar">Buscar</button>
+            </fieldset>
+          </form>
+        </article>
+        <section class="titulos-trabajador">
+          <h3>Lista de Empleados</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>N`</th>
+                <th>Nombres</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-trabajadores-body">
+              <!-- <tr>
                             <td>1</td>
                             <td>Juan</td>
                             <td>Pérez</td>
@@ -106,304 +106,485 @@
                             <td>Rodríguez</td>
                             <td>1988-12-20</td>
                         </tr> -->
-                    </tbody>
-                </table>
-                <button type="button" class="btn-crear-usuario">
-                    Agregar Empleado
-                </button>
-            </section>
-            <section class="creador-usuario" hidden>
-                <h3>Crear Usuario</h3>
-                <button class="abrir-ventana">
-                    <strong>Trabajadores</strong>
-                </button>
-                <form id="creacion-usuario">
-                    <fieldset>
-                        <legend>Datos del Trabajador</legend>
-                        <label>
-                            <strong>Nombre completo:</strong>
-                            <input 
-                            placeholder="Ingrese nombre completo"
-                            id="nombre-de-empleado"
-                            required
-                            >
-                        </label>
-                        <label>
-                            <strong>Usuario:</strong>
-                            <input
-                            placeholder="Ingrese un nombre de usuario"
-                            id="usuario"
-                            required
-                            >
-                        </label>
-                        <label>
-                            <strong>Contraseña Predeterminada:</strong>
-                            <input
-                            type="password"
-                            placeholder="Ingrese una contraseña"
-                            id="contraseña"
-                            required
-                            >
-                        </label>
-                        <label>
-                            <strong>Rol:</strong>
-                            <select
-                            name="rol-empleado"
-                            id="rol-empleado"
-                            required
-                            >
-                                <option value="admin">Administrador</option>
-                                <option value="gerencia">Gerencia</option>
-                                <option value="rrhh" selected>Recursos Humanos</option>
-                            </select>
-                        </label>
-                    </fieldset>
-                    <fieldset id="fechas-usuario">
-                        <legend>Fechas de Autorización del Usuario</legend>
-                        <label>
-                            <strong>Fecha de Inicio:</strong>
-                            <input type="date" id="fecha-inicio">
-                        </label>
-                        <label>
-                            <strong>Fecha de Fin:</strong>
-                            <input type="date" id="fecha-fin">
-                        </label>
-                    </fieldset>
-                    <div class="btns-crear-usuario">
-                        <button type="submit" id="btn-agregar">
-                            <strong>Crear Usuario</strong>
-                        </button>
-                        <button type="button" id="btn-regresar">
-                            <strong>Regresar</strong>
-                        </button>
-                    </div>
-                </form>
-            </section>
-            <dialog class="modal">
-                <h3>Trabajadores sin Usuario</h3>
-                <form id="busqueda-empleado-modal">
-                    <fieldset>
-                        <legend>Búsqueda por Nombre:</legend>
-                        <input
-                         id="barra-ventana"
-                         placeholder="Ingrese el nombre del empleado a buscar"
-                        >
-                        <button type="submit" id="b-buscar">
-                            Buscar
-                        </button>
-                    </fieldset>
-                </form>
-                <table class="tabla-trabajadores">
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Apellido Paterno</th>
-                            <th>Apellido Materno</th>
-                            <th>Fecha de Nacimiento</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Juan</td>
-                            <td>Pérez</td>
-                            <td>Gómez</td>
-                            <td>1990-05-15</td>
-                            <td><button>Editar</button></td>
-                        </tr>
-                        <tr>
-                            <td>Maria</td>
-                            <td>González</td>
-                            <td>Rodríguez</td>
-                            <td>1988-12-20</td>
-                            <td><button>Editar</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button type="button" onclick="cerrarModal()">
-                    Cerrar
-                </button>
-            </dialog>
+            </tbody>
+          </table>
+          <button type="button" class="btn-crear-usuario">
+            Agregar Empleado
+          </button>
         </section>
-        <section id="planillas" hidden>
-            <article class="container">
-                <h3 class="title">Búsqueda Planilla</h3>
-                <form>
-                    <fieldset>
-                        <legend>Búsqueda por Fecha:</legend>
-                        <label class="form-group">
-                            Año
-                            <input
-                                type="number"
-                                id="year"
-                                name="year" 
-                                min="1900" 
-                                max="2099" 
-                                step="1" 
-                                placeholder="Ingrese el año" 
-                                required
-                            >
-                        </label>
-                        <label class="form-group">
-                            Mes
-                            <input
-                                type="month" 
-                                id="month" 
-                                name="month" 
-                                required
-                            >
-                        </label>
-                        <div class="form-group">
-                            <button type="submit">
-                                Buscar
-                            </button>
-                        </div>
-                    </fieldset>
-                </form>
-            </article>
-            <article class="container">
-                <form>
-                    <fieldset>
-                        <legend class="title">Listado de Contratos Planillas</legend>
-                        <label>
-                            Buscar
-                            <input
-                                type="text"
-                                id="username" 
-                                name="username" 
-                                placeholder="Ingrese el nombre del usuario" 
-                                required
-                            >
-                        </label>
-                        <button type="submit">
-                            Buscar
-                        </button>
-                    </fieldset>
-                </form>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Posición</th>
-                                <th>Año</th>
-                                <th>Nombre del Trabajador</th>
-                                <th>Inicio de Contrato</th>
-                                <th>Cargo</th>
-                                <th>Sueldo</th>
-                                <th>Cargos Fijos</th>
-                                <th>Sueldo Bruto</th>
-                                <th>Cargo Variable</th>
-                                <th>Sueldo Neto</th>
-                                <th>Reporte</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>2023</td>
-                                <td>Juan Pérez</td>
-                                <td>01/01/2023</td>
-                                <td>Ingeniero</td>
-                                <td>$2000</td>
-                                <td>$300</td>
-                                <td>$2300</td>
-                                <td>$200</td>
-                                <td>$2500</td>
-                                <td><button>Ver Reporte</button></td>
-                            </tr>
-                        </tbody>
-                    </table>
-            </article>
+        <section class="creador-usuario" hidden>
+          <h3>Crear Usuario</h3>
+          <button class="abrir-ventana">
+            <strong>Trabajadores</strong>
+          </button>
+          <form id="creacion-usuario">
+            <fieldset>
+              <legend>Datos del Trabajador</legend>
+              <label>
+                <strong>Nombre completo:</strong>
+                <input
+                  placeholder="Ingrese nombre completo"
+                  id="nombre-de-empleado"
+                  required
+                />
+              </label>
+              <label>
+                <strong>Usuario:</strong>
+                <input
+                  placeholder="Ingrese un nombre de usuario"
+                  id="usuario"
+                  required
+                />
+              </label>
+              <label>
+                <strong>Contraseña Predeterminada:</strong>
+                <input
+                  type="password"
+                  placeholder="Ingrese una contraseña"
+                  id="contraseña"
+                  required
+                />
+              </label>
+              <label>
+                <strong>Rol:</strong>
+                <select name="rol-empleado" id="rol-empleado" required>
+                  <option value="admin">Administrador</option>
+                  <option value="gerencia">Gerencia</option>
+                  <option value="rrhh" selected>Recursos Humanos</option>
+                </select>
+              </label>
+            </fieldset>
+            <fieldset id="fechas-usuario">
+              <legend>Fechas de Autorización del Usuario</legend>
+              <label>
+                <strong>Fecha de Inicio:</strong>
+                <input type="date" id="fecha-inicio" />
+              </label>
+              <label>
+                <strong>Fecha de Fin:</strong>
+                <input type="date" id="fecha-fin" />
+              </label>
+            </fieldset>
+            <div class="btns-crear-usuario">
+              <button type="submit" id="btn-agregar">
+                <strong>Crear Usuario</strong>
+              </button>
+              <button type="button" id="btn-regresar">
+                <strong>Regresar</strong>
+              </button>
+            </div>
+          </form>
         </section>
-        <section id="contratos" hidden>
-            <section class="section">
-                <form class="search-box">
-                    <fieldset>
-                        <legend><strong>Búsqueda por Nombre:</strong></legend>
-                        <label>
-                            <input id="searchByContract" placeholder="Buscar por nombre...">
-                        </label>
-                        <button type="submit" onclick="searchByContract()">
-                            Buscar
-                        </button>
-                    </fieldset>
-                </form>
-                <form class="search-box">
-                    <fieldset>
-                        <legend>
-                            Búsqueda por Fecha:
-                        </legend>
-                        <label>
-                            <h4>Fecha Inicio:</h4>
-                            <input
-                            type="date"
-                            id="startDate"
-                            placeholder="Fecha de inicio"
-                            >
-                        </label>
-                        <label>
-                            <h4>Fecha Fin:</h4>
-                            <input
-                            type="date" 
-                            id="endDate" 
-                            placeholder="Fecha de fin"
-                            >
-                        </label>
-                        <button type="submit" onclick="searchByDate()">
-                            Buscar
-                        </button>
-                    </fieldset>
-                </form>
-            </section>
-            <section class="section">
-                <form class="search-box">
-                    <fieldset>
-                        <label>
-                            <h3>Buscar</h3>
-                            <input id="additionalFilter" placeholder="nombre...">
-                        </label>
-                        <button type="submit" onclick="additionalFilter()">
-                            Buscar
-                        </button>
-                    </fieldset>
-                </form>
-                <h3>Lista de Contratos</h3> 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Año</th>
-                            <th>Mes</th>
-                            <th>Trabajador</th>
-                            <th>Inicio Contrato</th>
-                            <th>Fin Contrato</th>
-                            <th>Cargo</th>
-                            <th>Sueldo</th>
-                            <th>Imprimir</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2023</td>
-                            <td>Enero</td>
-                            <td>Trabajador 1</td>
-                            <td>01/01/2023</td>
-                            <td>31/12/2023</td>
-                            <td>Gerente</td>
-                            <td>$3000</td>
-                            <td><button onclick="printDocument('doc1.pdf')">Imprimir</button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+        <dialog class="modal">
+          <h3>Trabajadores sin Usuario</h3>
+          <form id="busqueda-empleado-modal">
+            <fieldset>
+              <legend>Búsqueda por Nombre:</legend>
+              <input
+                id="barra-ventana"
+                placeholder="Ingrese el nombre del empleado a buscar"
+              />
+              <button type="submit" id="b-buscar">Buscar</button>
+            </fieldset>
+          </form>
+          <table class="tabla-trabajadores">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Juan</td>
+                <td>Pérez</td>
+                <td>Gómez</td>
+                <td>1990-05-15</td>
+                <td><button>Editar</button></td>
+              </tr>
+              <tr>
+                <td>Maria</td>
+                <td>González</td>
+                <td>Rodríguez</td>
+                <td>1988-12-20</td>
+                <td><button>Editar</button></td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" onclick="cerrarModal()">Cerrar</button>
+        </dialog>
+      </section>
+      <section id="planillas" hidden>
+        <article class="container">
+          <h3 class="title">Búsqueda Planilla</h3>
+          <form>
+            <fieldset>
+              <legend>Búsqueda por Fecha:</legend>
+              <label class="form-group">
+                Ingresar Mes y Año
+                <input type="month" id="month" name="month" required />
+              </label>
+              <div class="form-group">
+                <button type="submit">Buscar</button>
+                <button type="button" id="btn-registar-planilla">
+                  <strong>+</strong> Nuevo Registro
+                </button>
+                <script type="module">
+                  let btn = document.getElementById("btn-registar-planilla");
+                  let articleRegistar =
+                    document.getElementById("registar-planilla");
+                  btn.addEventListener("click", () => {
+                    let arreglo = [...document.querySelectorAll(".container")];
+                    arreglo.forEach((el) => {
+                      if (el.id === "registar-planilla") {
+                        el.removeAttribute("hidden");
+                        return;
+                      }
+                      el.setAttribute("hidden", true);
+                    });
+                  });
+                </script>
+              </div>
+            </fieldset>
+          </form>
+        </article>
+        <article class="container">
+          <form>
+            <fieldset>
+              <legend class="title">Listado de Contratos Planillas</legend>
+              <label>
+                Buscar
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  placeholder="Ingrese el nombre del usuario"
+                  required
+                />
+              </label>
+              <button type="submit">Buscar</button>
+            </fieldset>
+          </form>
+          <table>
+            <thead>
+              <tr>
+                <th>Posición</th>
+                <th>Año</th>
+                <th>Nombre del Trabajador</th>
+                <th>Inicio de Contrato</th>
+                <th>Cargo</th>
+                <th>Sueldo</th>
+                <th>Cargos Fijos</th>
+                <th>Sueldo Bruto</th>
+                <th>Cargo Variable</th>
+                <th>Sueldo Neto</th>
+                <th>Reporte</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>2023</td>
+                <td>Juan Pérez</td>
+                <td>01/01/2023</td>
+                <td>Ingeniero</td>
+                <td>$2000</td>
+                <td>$300</td>
+                <td>$2300</td>
+                <td>$200</td>
+                <td>$2500</td>
+                <td><button>Ver Reporte</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+        <article class="container" id="registar-planilla" hidden>
+          <form id="datos-contratados-registro-planilla-formulario-principal">
+            <fieldset>
+              <script type="module">
+                let year = document.getElementById("planillas-year");
+                let month = document.getElementById("planillas-month");
+                let months = [
+                  "Enero",
+                  "Febrero",
+                  "Marzo",
+                  "Abril",
+                  "Mayo",
+                  "Junio",
+                  "Julio",
+                  "Agosto",
+                  "Septiembre",
+                  "Octubre",
+                  "Noviembre",
+                  "Diciembre",
+                ];
+                window.addEventListener("load", () => {
+                  let option = document.createElement("option");
+                  option.value = "año";
+                  option.text = "Año";
+                  year.appendChild(option);
+                  for (let i = 2024; i >= 2000; i--) {
+                    let option = document.createElement("option");
+                    option.value = i;
+                    option.text = i;
+                    year.appendChild(option);
+                  }
+                  option = document.createElement("option");
+                  option.value = "mes";
+                  option.text = "Mes";
+                  month.appendChild(option);
+                  for (let i = 1; i <= 12; i++) {
+                    let option = document.createElement("option");
+                    option.value = i;
+                    option.text = months[i - 1];
+                    month.appendChild(option);
+                  }
+                });
+              </script>
+              <legend>
+                <h3>Datos del Contrato - Planilla</h3>
+              </legend>
+              <label>
+                Año
+                <select name="year" id="planillas-year"></select>
+              </label>
+              <label>
+                Mes
+                <select name="month" id="planillas-month"></select>
+              </label>
+              <form id="datos-contratados-registro-planilla-formulario">
+                <fieldset>
+                  <legend>Listado de Contratos Disponibles</legend>
+                  <label>
+                    <input
+                      name="datos-contratados"
+                      id="datos-contratados-planilla"
+                      placeholder="Ingrese datos trabajador"
+                    />
+                  </label>
+                  <button type="submit">Buscar</button>
+                </fieldset>
+              </form>
+
+              <table>
+                <thead>
+                  <tr>
+                    <th>Trabajador</th>
+                    <th>Inicio Contrato</th>
+                    <th>Fin Contrato</th>
+                    <th>Cargo</th>
+                    <th>Sueldo Base</th>
+                    <th>Sueldo Bruto</th>
+                  </tr>
+                </thead>
+                <tbody id="tabla-trabajadores-body">
+                  <!-- <tr>
+                          <td>1</td>
+                          <td>Juan</td>
+                          <td>Pérez</td>
+                          <td>Gómez</td>
+                          <td>1990-05-15</td>
+                      </tr>
+                      <tr>
+                          <td>2</td>
+                          <td>Maria</td>
+                          <td>González</td>
+                          <td>Rodríguez</td>
+                          <td>1988-12-20</td>
+                      </tr> -->
+                </tbody>
+              </table>
+              <style>
+                form#datos-contratados-registro-planilla-formulario fieldset {
+                  display: flex;
+                  flex-direction: row;
+                  width: 100%;
+                  label {
+                    width: 100%;
+                  }
+                }
+                div.container-boton {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 100%;
+                }
+              </style>
+              <div class="container-boton">
+                <button type="submit">Registrar planilla a trabajadores</button>
+              </div>
+            </fieldset>
+          </form>
+          <script type="module">
+            let formRegistrarPlanilla = document.getElementById(
+              "datos-contratados-registro-planilla-formulario-principal"
+            );
+            let modalRegistrarPlanilla =
+              document.getElementById("dialog-planilla");
+            formRegistrarPlanilla.addEventListener("submit", (e) => {
+              e.preventDefault();
+
+              modalRegistrarPlanilla.showModal();
+            });
+          </script>
+          <button type="button" id="btn-registar-planilla-regresar">
+            Regresar
+          </button>
+          <script type="module">
+            let btnRegresar = document.getElementById(
+              "btn-registar-planilla-regresar"
+            );
+            btnRegresar.addEventListener("click", () => {
+              let arreglo = [...document.querySelectorAll(".container")];
+              arreglo.forEach((el) => {
+                if (el.id === "registar-planilla") {
+                  el.setAttribute("hidden", true);
+                  return;
+                }
+                el.removeAttribute("hidden");
+              });
+            });
+          </script>
+        </article>
+        <style>
+          #dialog-planilla {
+            label {
+              display: flex;
+              flex-direction: column;
+              gap: 1rem;
+            }
+
+            input,
+            select {
+              height: 2.8rem;
+              width: 100%;
+              border: 0;
+              border-radius: 0.5rem;
+              font-size: 1rem;
+              padding-left: 1rem;
+            }
+          }
+        </style>
+        <dialog id="dialog-planilla">
+          <form>
+            <legend>
+              <h3>
+                Editar Conceptos Fijos variables de:
+                <span id="empleado-conceptos">usuario</span>
+              </h3>
+            </legend>
+            <label>
+              Tipo de Conceptos Variables:
+              <select name="tipos-conceptos" id="tipos-conceptos">
+                <option value="bonificacion">Bonificacion</option>
+              </select>
+            </label>
+            <label>
+              Monto
+              <input
+                type="number"
+                name="monto"
+                id="monto-concepto-empledado"
+                placeholder="0.00"
+              />
+            </label>
+            <label>
+              Descripcion
+              <input
+                type="text"
+                name="Descripcion"
+                id="descripcion-concepto-empleado"
+                placeholder="Descripcion"
+              />
+            </label>
+          </form>
+        </dialog>
+      </section>
+      <section id="contratos" hidden>
+        <section class="section">
+          <form class="search-box">
+            <fieldset>
+              <legend><strong>Búsqueda por Nombre:</strong></legend>
+              <label>
+                <input
+                  id="searchByContract"
+                  placeholder="Buscar por nombre..."
+                />
+              </label>
+              <button type="submit" onclick="searchByContract()">Buscar</button>
+            </fieldset>
+          </form>
+          <form class="search-box">
+            <fieldset>
+              <legend>Búsqueda por Fecha:</legend>
+              <label>
+                <h4>Fecha Inicio:</h4>
+                <input
+                  type="date"
+                  id="startDate"
+                  placeholder="Fecha de inicio"
+                />
+              </label>
+              <label>
+                <h4>Fecha Fin:</h4>
+                <input type="date" id="endDate" placeholder="Fecha de fin" />
+              </label>
+              <button type="submit" onclick="searchByDate()">Buscar</button>
+            </fieldset>
+          </form>
         </section>
+        <section class="section">
+          <form class="search-box">
+            <fieldset>
+              <label>
+                <h3>Buscar</h3>
+                <input id="additionalFilter" placeholder="nombre..." />
+              </label>
+              <button type="submit" onclick="additionalFilter()">Buscar</button>
+            </fieldset>
+          </form>
+          <h3>Lista de Contratos</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Año</th>
+                <th>Mes</th>
+                <th>Trabajador</th>
+                <th>Inicio Contrato</th>
+                <th>Fin Contrato</th>
+                <th>Cargo</th>
+                <th>Sueldo</th>
+                <th>Imprimir</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>2023</td>
+                <td>Enero</td>
+                <td>Trabajador 1</td>
+                <td>01/01/2023</td>
+                <td>31/12/2023</td>
+                <td>Gerente</td>
+                <td>$3000</td>
+                <td>
+                  <button onclick="printDocument('doc1.pdf')">Imprimir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
     </main>
     <footer>
-        <p>
-            &copy; 2024 Grupo 2 Taller de Programación Web. Este proyecto está licenciado bajo la 
-            <a href="https://opensource.org/licenses/MIT">
-                Licencia MIT
-            </a>
-            .
-        </p>
+      <p>
+        &copy; 2024 Grupo 2 Taller de Programación Web. Este proyecto está
+        licenciado bajo la
+        <a href="https://opensource.org/licenses/MIT"> Licencia MIT </a>
+        .
+      </p>
     </footer>
-</body>
+  </body>
 </html>
