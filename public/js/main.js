@@ -8,6 +8,8 @@ const nombreUsuario = document.querySelector('#nombreUsuario');
 
 nombreUsuario.innerHTML = USER[0].usuario;
 
+
+console.log(USER);
 document.querySelector('#btn-cerrar-sesion').addEventListener('click', function () {
     window.location.href = "../../../index.html";
 });
@@ -46,12 +48,3 @@ document.querySelector('.btn-contrato').addEventListener('click', function () {
 document.querySelector('.abrir-ventana').addEventListener('click', function () {
     cerrarModal();
 });
-
-function cerrarModal() {
-    let modal = document.querySelector(".modal")
-    if (document.querySelector('.modal').hasAttribute('open')) {
-        modal.close();
-    } else {
-        modal.showModal();
-    }
-}
