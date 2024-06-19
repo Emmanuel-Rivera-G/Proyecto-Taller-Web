@@ -48,3 +48,11 @@ document.querySelector('.btn-contrato').addEventListener('click', function () {
 document.querySelector('.abrir-ventana').addEventListener('click', function () {
     cerrarModal();
 });
+
+
+const formulario1 = document.querySelector('#busqueda-empleado');
+const formulario2 = document.querySelector('#creacion-usuario');
+const formulario3 = document.querySelector('#busqueda-empleado-modal');
+const formulario4 = document.querySelector('#busqueda-planilla-principal-formulario');
+const formulario5 = document.querySelector('#busqueda-planilla-formulario-con-registro');
+const formulario6 = document.querySelector('#datos-contratados-registro-planilla-formulario-principal');
