@@ -4,17 +4,6 @@ const employees = [
 ];
 
 const tableBody = document.getElementById('tabla-trabajadores-body');
-// employees.forEach(employee => {
-//     const row = document.createElement('tr');
-
-//     Object.values(employee).forEach(value => {
-//         const cell = document.createElement('td');
-//         cell.textContent = value;
-//         row.appendChild(cell);
-//     });
-
-//     tableBody.appendChild(row);
-// });
 
 function llenarTablaTrabajadores(tabla = tableBody, data) {
     data.forEach(element => {
