@@ -1,3 +1,5 @@
+import { USER } from './USERDATA.js';
+
 const PUERTO_SERVIDOR = '8000';
 const RUTA_SERVIDOR = '/src/db/control/validacion.php';
 
@@ -11,7 +13,7 @@ document.getElementById('formularioAutenticacion').addEventListener('submit', fu
     let formData = new FormData(this);
 
     if (formData.get('Usuario') == "usuario" && formData.get('Contraseña') == "contraseña") {
-        autenticado();
+        autenticado(formData.get('Usuario'), formData.get('Contraseña'));
     } else {
         fetch(URL_SERVIDOR, {
             method: 'POST',
@@ -25,9 +27,9 @@ document.getElementById('formularioAutenticacion').addEventListener('submit', fu
         })
         .then(data => {
             if (data.autenticado) {
-                autenticado();
+                autenticado(formData.get('Usuario'), formData.get('Contraseña'));
             } else {
-                alert('El usuario no está autenticado');
+                throw new Error();
             }
         })
         .catch(error => {
@@ -45,7 +47,10 @@ document.getElementById('formularioAutenticacion').addEventListener('submit', fu
     }
 });
 
-function autenticado() {
-    alert('¡El usuario está autenticado!');
+function autenticado(usuario, contraseña) {
+    USER.push({ 
+        usuario:usuario,
+        constraseña:contraseña
+    });
     window.location.href = "../principal/principal.html";
 }
