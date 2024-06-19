@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="../../css/sections/style_contratos.css" />
     <script defer src="../../js/main.js"></script>
     <script defer src="../../js/usuarios.js"></script>
+    <script defer src="../../js/planilla.js"></script>
   </head>
   <body>
     <header>
@@ -419,11 +420,8 @@
             </fieldset>
           </form>
           <script type="module">
-            let formRegistrarPlanilla = document.getElementById(
-              "datos-contratados-registro-planilla-formulario-principal"
-            );
-            let modalRegistrarPlanilla =
-              document.getElementById("dialog-planilla");
+            let formRegistrarPlanilla = document.getElementById("datos-contratados-registro-planilla-formulario-principal");
+            let modalRegistrarPlanilla = document.getElementById("dialog-planilla");
             formRegistrarPlanilla.addEventListener("submit", (e) => {
               e.preventDefault();
 
@@ -434,9 +432,7 @@
             Regresar
           </button>
           <script type="module">
-            let btnRegresar = document.getElementById(
-              "btn-registar-planilla-regresar"
-            );
+            let btnRegresar = document.getElementById("btn-registar-planilla-regresar");
             btnRegresar.addEventListener("click", () => {
               let arreglo = [...document.querySelectorAll(".container")];
               arreglo.forEach((el) => {
@@ -451,6 +447,10 @@
         </article>
         <style>
           #dialog-planilla {
+            form {
+                margin-bottom: 0;
+            }
+
             label {
               display: flex;
               flex-direction: column;
@@ -458,13 +458,24 @@
             }
 
             input,
-            select {
+            select,
+            textarea {
               height: 2.8rem;
               width: 100%;
               border: 0;
               border-radius: 0.5rem;
               font-size: 1rem;
               padding-left: 1rem;
+            }
+
+            textarea {
+                height: 15rem;
+            }
+
+            .container-botones-dialog-planilla {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
             }
           }
         </style>
@@ -493,13 +504,19 @@
             </label>
             <label>
               Descripcion
-              <input
+              <textarea
                 type="text"
                 name="Descripcion"
                 id="descripcion-concepto-empleado"
                 placeholder="Descripcion"
-              />
+              ></textarea>
             </label>
+            <div class="container-botones-dialog-planilla">
+                <button type="submit">Guardar</button>
+                <button type="button" id="btn-registar-planilla-regresar" onclick="cerrarModalPlanilla()">
+                    Regresar
+                </button>
+            </div>
           </form>
         </dialog>
       </section>
