@@ -1,6 +1,6 @@
 const employees = [
     { number: 1, name: 'Juan Pérez', email: 'juan.perez@example.com', usuario: 'juanperez',rol: 'admin', fechaFin: '2024-12-31', status: 'Activo' },
-    { number: 2, name: 'María García', email: 'maria.garcia@example.com', usuario: 'mariagarcia', rol: 'gerencia', fechaFin: '2024-09-27', status: 'Activo' },
+    { number: 2, name: 'Maria García', email: 'maria.garcia@example.com', usuario: 'mariagarcia', rol: 'gerencia', fechaFin: '2024-09-27', status: 'Activo' },
 ];
 
 const tableBody = document.getElementById('tabla-trabajadores-body');
