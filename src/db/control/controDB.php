@@ -33,4 +33,29 @@ function construirConsulta($tabla, $campos = '*', $condiciones = '', $orden = ''
 
     return $consulta;
 }
+
+function construirConsultaInsert($tabla, $campos, $nameArgs = [], $args = []) {
+    $trueArgs = $nameArgs != [] ? $nameArgs : $args;
+    $argTag = $nameArgs ? "named_args" : "args";
+    $placeHorders = implode(', ', array_fill(0, count($trueArgs), '?'));
+
+    $sql = "INSERT INTO $tabla ($campos) VALUES $placeHorders";
+
+    $consulta = [
+        "requests" => [
+            [
+                "type" => "execute",
+                "stmt" => [
+                    "sql" => $sql,
+                    $argTag => $trueArgs
+                ]
+            ],
+            [
+                "type" => "close"
+            ]
+        ]
+    ];
+
+    return $consulta;
+}
 ?>

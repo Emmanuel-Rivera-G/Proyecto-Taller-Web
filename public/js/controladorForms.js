@@ -42,5 +42,55 @@ formulario1.addEventListener('submit', (e) => {
     limpiarDatosEmpleadosTabla1();
 
     llenarTabla1(newData);
-
 });
+
+formulario2.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    let formData = new FormData(e.target);
+    //TODO: Agregar un elemento tipo form al formulario para que se puedan enviar los datos
+    formData.append('formId', FORMSIDS.formulario2.id); 
+    let nombreCompleto = formData.get('nombre-completo');
+    let nombre = nombreCompleto.split(' ')[0];
+    let apellidoPater = nombreCompleto.split(' ')[1];
+    let apellidoMater = nombreCompleto.split(' ')[2];
+    let usuario = formData.get('usuario');
+    let password = formData.get('contrseña');
+    let email = formData.get('rol-empleado');
+    let fecha_inicio = formData.get('fecha-inicio');
+    let fecha_fin = formData.get('fecha-fin');
+
+    let empleado = {
+        DNI: null,
+        apellidoMater: apellidoMater,
+        apellidoPater: apellidoPater,
+        cod_contrato: 1,
+        cod_empleado: EMPLEADOS.length + 1,
+        contraseña: password,
+        email: null,
+        estado: 1,
+        genero: 'u',
+        nombre: nombre,
+        telefono: 0,
+        usuario: usuario,
+        email: email,
+        formId: formData.get('formID'),
+    }
+
+    try {
+        const response = await fetch(URL, {
+            method: 'POST',
+            body: formData
+        })
+    
+        let text = await response.text();
+
+        console.log(text);
+        
+        let data = await JSON.parse(text);
+    } catch (error) {
+        console.error(error);
+    }
+
+    EMPLEADOS.push(empleado);
+
+})

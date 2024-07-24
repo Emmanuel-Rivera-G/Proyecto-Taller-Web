@@ -114,6 +114,7 @@
                 <strong>Nombre completo:</strong>
                 <input
                   placeholder="Ingrese nombre completo"
+                  name="nombre-completo"
                   id="nombre-de-empleado"
                   required
                 />
@@ -123,6 +124,7 @@
                 <input
                   placeholder="Ingrese un nombre de usuario"
                   id="usuario"
+                  name="Usuario"
                   required
                 />
               </label>
@@ -132,15 +134,16 @@
                   type="password"
                   placeholder="Ingrese una contraseña"
                   id="contraseña"
+                  name="contraseña"
                   required
                 />
               </label>
               <label>
                 <strong>Rol:</strong>
                 <select name="rol-empleado" id="rol-empleado" required>
-                  <option value="admin">Administrador</option>
-                  <option value="gerencia">Gerencia</option>
-                  <option value="rrhh" selected>Recursos Humanos</option>
+                  <option value="1"selected>Gerente de RRHH</option>
+                  <option value="2">Desarrollador Senior</option>
+                  <option value="3">Análista Finalciero</option>
                 </select>
               </label>
             </fieldset>
@@ -148,11 +151,11 @@
               <legend>Fechas de Autorización del Usuario</legend>
               <label>
                 <strong>Fecha de Inicio:</strong>
-                <input type="date" id="fecha-inicio" />
+                <input type="date" id="fecha-inicio-crear-usuario" name="fecha-inicio" />
               </label>
               <label>
                 <strong>Fecha de Fin:</strong>
-                <input type="date" id="fecha-fin" />
+                <input type="date" id="fecha-fin-crear-usuario" name="fecha-fin" />
               </label>
             </fieldset>
             <div class="btns-crear-usuario">
