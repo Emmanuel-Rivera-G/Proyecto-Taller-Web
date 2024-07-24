@@ -1,4 +1,4 @@
-import { EMPLEADOS, CONTRATOS, CARGOS, DEPARTAMENTOS } from './USERDATA.js';
+import { EMPLEADOS, CONTRATOS, CARGOS, DEPARTAMENTOS, PAGOS, DETALLEPAGOS, clearUser, clearEmployeesArray, clearContractsArray, clearCargosArray, clearDepartmentsArray, clearPagosArray, clearDetallePagosArray } from './USERDATA.js';
 
 const obtenerDatosUsuarios = async (url) => {
     try {
@@ -19,14 +19,26 @@ const obtenerDatosUsuarios = async (url) => {
     }
 }
 
-const inicializarDatos = async () => {
+export const inicializarDatos = async () => {
     let datos = await obtenerDatosUsuarios('http://localhost:8765/src/db/control/cargarDatosDB.php');
     if (datos) {
         EMPLEADOS.push(...datos.empleados);
         CONTRATOS.push(...datos.contratos);
         CARGOS.push(...datos.cargos);
         DEPARTAMENTOS.push(...datos.departamentos);
+        PAGOS.push(...datos.pagos);
+        DETALLEPAGOS.push(...datos.detallePagos);
     }
 }
 
-inicializarDatos();
+export const limpiarDados = () => {
+    clearUser();
+    clearEmployeesArray();
+    clearContractsArray();
+    clearCargosArray();
+    clearDepartmentsArray();
+    clearPagosArray();
+    clearDetallePagosArray();
+}
+
+await inicializarDatos();

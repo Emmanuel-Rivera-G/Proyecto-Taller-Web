@@ -124,4 +124,62 @@ function tablaDepartamentos() {
 
     return $departamentos;
 }
+
+function tablaPagos() {
+    iniciarConexion();
+
+    $pagos = [];
+
+    $consulta = construirConsulta(
+        'Pagos',
+        'cod_pago,fecha_pago,monto_pago,total_pago,cod_detalle_pago',
+    );
+
+    $respuesta = enviarDatos($consulta);
+    $datos = json_decode($respuesta, true);
+    cerrarConexion();
+
+    foreach ($datos['results'][0]['response']['result']['rows'] as $rows) {
+        $cod_pago = $rows[0]['value'];
+        $fecha_pago = $rows[1]['value'];
+        $monto_pago = $rows[2]['value'];
+        $total_pago = $rows[3]['value'];
+        $cod_detalle_pago = $rows[4]['value'];
+
+        $pago = new Pago($cod_pago, $fecha_pago,$monto_pago,$total_pago,$cod_detalle_pago);
+
+        $pagos[] = $pago;
+    }
+
+    return $pagos;
+}
+
+function tablaDetallePago() {
+    iniciarConexion();
+
+    $detallePagos = [];
+
+    $consulta = construirConsulta(
+        'DetallePago',
+        'cod_detalle_pago,bonificaciones,descuentos,horas_trabajadas,tipo_pago',
+    );
+
+    $respuesta = enviarDatos($consulta);
+    $datos = json_decode($respuesta, true);
+    cerrarConexion();
+
+    foreach ($datos['results'][0]['response']['result']['rows'] as $rows) {
+        $cod_detalle_pago = $rows[0]['value'];
+        $bonificaciones = $rows[1]['value'];
+        $descuentos = $rows[2]['value'];
+        $horas_trabajadas = $rows[3]['value'];
+        $tipo_pago = $rows[4]['value'];
+
+        $detallePago = new DetallePago($cod_detalle_pago, $bonificaciones,$descuentos,$horas_trabajadas,$tipo_pago);
+
+        $detallePagos[] = $detallePago;
+    }
+
+    return $detallePagos;
+}
 ?>

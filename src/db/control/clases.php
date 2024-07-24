@@ -75,4 +75,38 @@ class Departamento {
         $this->npm_departamento = $npm_departamento;
     }
 }
+
+class Pago {
+    public $cod_pago;
+    public $fecha_pago;
+    public $monto_pago;
+    public $total_pago;
+    public $cod_detalle_pago;
+
+    // Constructor
+    public function __construct($cod_pago, $fecha_pago, $monto_pago, $total_pago, $cod_detalle_pago) {
+        $this->cod_pago = $cod_pago;
+        $this->fecha_pago = $fecha_pago;
+        $this->monto_pago = $monto_pago;
+        $this->total_pago = $total_pago;
+        $this->cod_detalle_pago = $cod_detalle_pago;
+    }
+}
+
+class DetallePago {
+    public $cod_detalle_pago;
+    public $bonificaciones;
+    public $descuentos;
+    public $horas_trabajadas;
+    public $tipo_pago;
+
+    // Constructor
+    public function __construct($cod_detalle_pago, $bonificaciones, $descuentos, $horas_trabajadas, $tipo_pago) {
+        $this->cod_detalle_pago = $cod_detalle_pago;
+        $this->bonificaciones = $bonificaciones;
+        $this->descuentos = $descuentos;
+        $this->horas_trabajadas = $horas_trabajadas;
+        $this->tipo_pago = $tipo_pago;
+    }
+}
 ?>

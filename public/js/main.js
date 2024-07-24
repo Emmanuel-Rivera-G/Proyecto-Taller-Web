@@ -1,4 +1,6 @@
-import { USER, clearUser, clearEmployeesArray, clearContractsArray, clearCargosArray, clearDepartmentsArray } from './USERDATA.js';
+import { USER } from './USERDATA.js';
+import { limpiarDados } from './cargarDatos.js';
+import llenarTablas from './usuariosPageTablas.js';
 
 const usuarios = document.querySelector('#usuarios');
 const planillas = document.querySelector('#planillas');
@@ -10,11 +12,7 @@ nombreUsuario.innerHTML = USER[USER.length - 1].usuario;
 
 
 document.querySelector('#btn-cerrar-sesion').addEventListener('click', function () {
-    clearUser();
-    clearEmployeesArray();
-    clearContractsArray();
-    clearCargosArray();
-    clearDepartmentsArray();
+    limpiarDados();
     window.location.href = "../../../index.html";
 });
 
@@ -52,3 +50,5 @@ document.querySelector('.btn-contrato').addEventListener('click', function () {
 document.querySelector('.abrir-ventana').addEventListener('click', function () {
     cerrarModal();
 });
+
+llenarTablas();

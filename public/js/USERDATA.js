@@ -3,7 +3,9 @@ const KEYS = {
     EMPLEADOS: 'sharedEmployeesArray',
     CONTRATOS: 'sharedContractsArray',
     CARGOS: 'sharedCargosArray',
-    DEPARTAMENTOS: 'sharedDepartmentsArray'
+    DEPARTAMENTOS: 'sharedDepartmentsArray',
+    PAGOS: 'sharedPagosArray',
+    DETALLEPAGOS: 'sharedDetallePagosArray'
 };
 
 const getArray = (key) => {
@@ -38,6 +40,8 @@ const EMPLEADOS = createProxiedArray(KEYS.EMPLEADOS);
 const CONTRATOS = createProxiedArray(KEYS.CONTRATOS);
 const CARGOS = createProxiedArray(KEYS.CARGOS);
 const DEPARTAMENTOS = createProxiedArray(KEYS.DEPARTAMENTOS);
+const PAGOS = createProxiedArray(KEYS.PAGOS);
+const DETALLEPAGOS = createProxiedArray(KEYS.DETALLEPAGOS);
 
 const clearUser = () => {
     clearStorageByKey(KEYS.USER);
@@ -64,4 +68,14 @@ const clearDepartmentsArray = () => {
     DEPARTAMENTOS.length = 0;
 }
 
-export { USER, EMPLEADOS, CONTRATOS, CARGOS, DEPARTAMENTOS, clearUser, clearEmployeesArray, clearContractsArray, clearCargosArray, clearDepartmentsArray };
+const clearPagosArray = () => {
+    clearStorageByKey(KEYS.PAGOS);
+    PAGOS.length = 0;
+}
+
+const clearDetallePagosArray = () => {
+    clearStorageByKey(KEYS.DETALLEPAGOS);
+    DETALLEPAGOS.length = 0;
+}
+
+export { USER, EMPLEADOS, CONTRATOS, CARGOS, DEPARTAMENTOS, PAGOS, DETALLEPAGOS, clearUser, clearEmployeesArray, clearContractsArray, clearCargosArray, clearDepartmentsArray, clearPagosArray, clearDetallePagosArray };

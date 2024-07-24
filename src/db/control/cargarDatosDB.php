@@ -12,7 +12,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         "empleados" => tablaEmpleados(),
         "contratos" => tablaContratos(),
         "cargos" => tablaCargo(),
-        "departamentos" => tablaDepartamentos()
+        "departamentos" => tablaDepartamentos(),
+        "pagos" => tablaPagos(),
+        "detallePagos" => tablaDetallePago()
     ];
 
     echo json_encode($finalResponse);
