@@ -8,7 +8,11 @@ function crearFila(data) {
     const row = document.createElement('tr');
     Object.values(data).forEach((value) => {
         const cell = document.createElement('td');
-        cell.textContent = value;
+        if(String(value).includes('button')) {
+            cell.innerHTML = value;
+        } else {
+            cell.textContent = value;
+        }
         row.appendChild(cell);
     });
     return row;
@@ -57,7 +61,8 @@ function parsearContratos() {
             fechaInicio: el.fecha_inicio,
             fechaFin: el.fecha_fin,
             cargo: CARGOS.filter(cargo => cargo.cod_cargo == CONTRATOS.filter(contrato => contrato.cod_contrato == emp.cod_contrato)[0].cod_cargo)[0].nom_puesto,
-            salario: el.salario
+            salario: '$' + el.salario,
+            boton: "<button class='boton-editar' data-id='" + el.cod_contrato + "'>Imprimir</button>"
         };
         contratos.push(contrato);
         });
