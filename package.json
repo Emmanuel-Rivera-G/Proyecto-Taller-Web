@@ -7,7 +7,7 @@
     "start": "npm run server:php",
     "dev": "npm run server:html",
     "server:html": "http-server . -p 8080",
-    "server:php": "php -S localhost:8000 -t ."
+    "server:php": "php -S localhost:8765 -t ."
   },
   "repository": {
     "type": "git",

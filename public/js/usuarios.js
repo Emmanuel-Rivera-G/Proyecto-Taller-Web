@@ -37,23 +37,23 @@ botonRegresar.addEventListener('click', () => {
 
 //Formularios
 const $ = (selector) => document.querySelector(selector);
-const busquedaEmpleadoForm = $('#busqueda-empleado');
+// const busquedaEmpleadoForm = $('#busqueda-empleado');
 
-busquedaEmpleadoForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+// busquedaEmpleadoForm.addEventListener('submit', (e) => {
+//     e.preventDefault();
 
-    let formData = new FormData(busquedaEmpleadoForm);
+//     let formData = new FormData(busquedaEmpleadoForm);
 
-    let nombre = formData.get('barra-busqueda') ?? '';
-    employees.forEach(employee => {
-        if (
-            employee.name.toLowerCase().includes(nombre.toLowerCase())
-            && tableBody?.children[0]?.children[0] != `<td>${employee.number}</td>`
-        ) {
-            console.log(tableBody?.children[0]?.children[0])
-            llenarTablaTrabajadores(tableBody, [employee]);
-        } else {
-            return
-        }
-    });
-});
+//     let nombre = formData.get('barra-busqueda') ?? '';
+//     employees.forEach(employee => {
+//         if (
+//             employee.name.toLowerCase().includes(nombre.toLowerCase())
+//             && tableBody?.children[0]?.children[0] != `<td>${employee.number}</td>`
+//         ) {
+//             console.log(tableBody?.children[0]?.children[0])
+//             llenarTablaTrabajadores(tableBody, [employee]);
+//         } else {
+//             return
+//         }
+//     });
+// });

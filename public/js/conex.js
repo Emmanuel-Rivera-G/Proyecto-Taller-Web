@@ -4,7 +4,8 @@ const PUERTO_SERVIDOR = '8000';
 const RUTA_SERVIDOR = '/src/db/control/validacion.php';
 
 // URL del servidor backend php
-const URL_SERVIDOR = `https://server-php-taller-programacion-web.zeabur.app${RUTA_SERVIDOR}`;
+// const URL_SERVIDOR = `https://server-php-taller-programacion-web.zeabur.app${RUTA_SERVIDOR}`;
+const URL_SERVIDOR = `http://localhost:8765${RUTA_SERVIDOR}`;
 
 document.getElementById('formularioAutenticacion').addEventListener('submit', function(event) {
 
@@ -27,7 +28,7 @@ document.getElementById('formularioAutenticacion').addEventListener('submit', fu
         })
         .then(data => {
             if (data.autenticado) {
-                autenticado(formData.get('Usuario'), formData.get('Contraseña'));
+                autenticado(formData.get('Usuario'), data.tipo);
             } else {
                 throw new Error();
             }
@@ -47,10 +48,14 @@ document.getElementById('formularioAutenticacion').addEventListener('submit', fu
     }
 });
 
-function autenticado(usuario, contraseña) {
+function autenticado(usuario, tipo) {
     USER.push({ 
         usuario:usuario,
-        constraseña:contraseña
+        tipo:tipo
     });
-    window.location.href = "../principal/principal.html";
+    if (tipo == "Administrador") {
+        window.location.href = "../principal/principal.html";
+    } else {
+        window.location.href = "../usuario/usuario.html";
+    }
 }

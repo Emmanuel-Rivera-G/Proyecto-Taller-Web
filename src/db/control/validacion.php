@@ -9,7 +9,7 @@
 
     if ($_POST['Usuario'] == "123" && $_POST['Contraseña'] == "123") {
         header('Content-Type: application/json');
-        echo json_encode(array("autenticado" => true));
+        echo json_encode(array("autenticado" => true, "tipo" => 'Administrador'));
     } else if ($_POST['Usuario'] != null && $_POST['Contraseña'] != null) {
         header('Content-Type: application/json');
         $usuario = trim($_POST['Usuario']);
@@ -24,7 +24,7 @@
                 [
                     "type" => "execute",
                     "stmt" => [
-                        "sql" => "SELECT EXISTS(SELECT 1 FROM usuario WHERE nombreUsuario = ? AND contraseñaUsuario = ?)",
+                        "sql" => "SELECT t.descripcionTipoUsuario FROM usuario u JOIN tipo_usuario t ON u.codigo_tipoUsuario = t.codigo_tipoUsuario WHERE u.nombreUsuario = ? AND u.contraseñaUsuario = ?",
                         "args" => [
                             [
                                 "type" => "text",
@@ -45,8 +45,11 @@
         $respuesta = enviarDatos($consulta);
         $datos = json_decode($respuesta, true);
         cerrarConexion();
-        if ($datos["results"][0]["response"]["result"]["rows"][0][0]["value"] == 1) {
-            echo json_encode(array('autenticado' => true));
+        $row = $datos["results"][0]["response"]["result"]["rows"][0];
+        if ($row) {
+            $tipo = $row[0]["value"];
+            $devolver = array('autenticado' => true, 'tipo' => $tipo);
+            echo json_encode($devolver);
         } else {
             echo json_encode(array('autenticado' => false));
         }

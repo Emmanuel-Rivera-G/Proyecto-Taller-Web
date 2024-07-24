@@ -1,4 +1,4 @@
-import { USER } from './USERDATA.js';
+import { USER, clearUser, clearEmployeesArray, clearContractsArray, clearCargosArray, clearDepartmentsArray } from './USERDATA.js';
 
 const usuarios = document.querySelector('#usuarios');
 const planillas = document.querySelector('#planillas');
@@ -9,8 +9,12 @@ const nombreUsuario = document.querySelector('#nombreUsuario');
 nombreUsuario.innerHTML = USER[USER.length - 1].usuario;
 
 
-console.log(USER);
 document.querySelector('#btn-cerrar-sesion').addEventListener('click', function () {
+    clearUser();
+    clearEmployeesArray();
+    clearContractsArray();
+    clearCargosArray();
+    clearDepartmentsArray();
     window.location.href = "../../../index.html";
 });
 
@@ -48,11 +52,3 @@ document.querySelector('.btn-contrato').addEventListener('click', function () {
 document.querySelector('.abrir-ventana').addEventListener('click', function () {
     cerrarModal();
 });
-
-
-const formulario1 = document.querySelector('#busqueda-empleado');
-const formulario2 = document.querySelector('#creacion-usuario');
-const formulario3 = document.querySelector('#busqueda-empleado-modal');
-const formulario4 = document.querySelector('#busqueda-planilla-principal-formulario');
-const formulario5 = document.querySelector('#busqueda-planilla-formulario-con-registro');
-const formulario6 = document.querySelector('#datos-contratados-registro-planilla-formulario-principal');

@@ -1,6 +1,9 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 $API_URL = "https://db-taller-web-emmanuel-rivera-g.turso.io/v2/pipeline";
-$authToken = "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MTc1OTcxMDIsImlkIjoiMDJkYmNmNzQtNDA5MS00OGRlLTlkZDQtN2YzMTUzMmEwZGE4In0.ab7lh1H9omAugUK2fFgwVMHuVQixI2R5SPxqQV8CbNiDu4C5kIeOyVeIJLJ9Xb45wZxQjsduVfv12xfPOi4VDQ";
+$authToken = "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3MjE3ODE1NzIsImlkIjoiMDJkYmNmNzQtNDA5MS00OGRlLTlkZDQtN2YzMTUzMmEwZGE4In0.GQPrdS2DsvQLdz9ksQAsHmnmbby1rDtH8wdOVZZB0KoCAhKeLezn5f9RyUONLa-PAxLXUS8Wrdsp7OHisO7_Dg";
 $ch = null;
 function iniciarConexion(){
     global $ch;

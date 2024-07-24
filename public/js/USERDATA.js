@@ -1,6 +1,9 @@
 const KEYS = {
     USER: 'sharedUserArray',
-    ANNOTHERARRAY: 'sharedAnotherArray'
+    EMPLEADOS: 'sharedEmployeesArray',
+    CONTRATOS: 'sharedContractsArray',
+    CARGOS: 'sharedCargosArray',
+    DEPARTAMENTOS: 'sharedDepartmentsArray'
 };
 
 const getArray = (key) => {
@@ -26,7 +29,39 @@ const createProxiedArray = (key) => {
     return new Proxy(array, proxyHandler);
 };
 
-const USER = createProxiedArray(KEYS.USER);
-const ANNOTHERARRAY = createProxiedArray(KEYS.ANOTHERARRAY);
+const clearStorageByKey = (key) => {
+    localStorage.removeItem(key);
+};
 
-export { USER, ANNOTHERARRAY };
+const USER = createProxiedArray(KEYS.USER);
+const EMPLEADOS = createProxiedArray(KEYS.EMPLEADOS);
+const CONTRATOS = createProxiedArray(KEYS.CONTRATOS);
+const CARGOS = createProxiedArray(KEYS.CARGOS);
+const DEPARTAMENTOS = createProxiedArray(KEYS.DEPARTAMENTOS);
+
+const clearUser = () => {
+    clearStorageByKey(KEYS.USER);
+    USER.length = 0;
+}
+
+const clearEmployeesArray = () => {
+    clearStorageByKey(KEYS.EMPLEADOS);
+    EMPLEADOS.length = 0;
+}
+
+const clearContractsArray = () => {
+    clearStorageByKey(KEYS.CONTRATOS);
+    CONTRATOS.length = 0;
+}
+
+const clearCargosArray = () => {
+    clearStorageByKey(KEYS.CARGOS);
+    CARGOS.length = 0;
+}
+
+const clearDepartmentsArray = () => {
+    clearStorageByKey(KEYS.DEPARTAMENTOS);
+    DEPARTAMENTOS.length = 0;
+}
+
+export { USER, EMPLEADOS, CONTRATOS, CARGOS, DEPARTAMENTOS, clearUser, clearEmployeesArray, clearContractsArray, clearCargosArray, clearDepartmentsArray };

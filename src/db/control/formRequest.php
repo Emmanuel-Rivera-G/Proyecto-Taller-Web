@@ -1,14 +1,14 @@
 <?php
-include('./conex.php');
-
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
+include('./conex.php');
+include('./controDB.php');
 
 $formId = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $formId = isset($_POST['formId']) ? $_POST['formId'] : '';
+    $formId = isset($_POST['formId']) ? $_POST['formId'] : 'creacion-usuario';
     header('Content-Type: application/json');
 
     iniciarConexion();
@@ -37,20 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-function construirConsulta($tabla, $campos = '*', $condiciones = '', $orden = '') {
-    $sql = "SELECT $campos FROM $tabla";
-
-    if (!empty($condiciones)) {
-        $sql .= " WHERE $condiciones";
-    }
-
-    if (!empty($orden)) {
-        $sql .= " ORDER BY $orden";
-    }
-
-    return $sql;
-}
-
 function manejarFormulario1() {
     global $formId;
     
@@ -72,6 +58,17 @@ function manejarFormulario1() {
     ];
     $respuesta = enviarDatos(json_encode($consulta));
     $datos = json_decode($respuesta, true);
+    $datos = [
+        'mensaje' => 'Formulario 1 procesado',
+        'formId' => $formId,
+        'datos' => [
+            'nombre' => 'formulario1',
+            'campos' => [
+                'nombre',
+                'apellido'
+            ],
+        ]
+    ];
 
     cerrarConexion();
     echo json_encode($datos);
