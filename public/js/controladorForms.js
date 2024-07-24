@@ -17,7 +17,7 @@ const formulario4 = $(FORMSIDS.formulario4.id);
 const formulario5 = $(FORMSIDS.formulario5.id);
 const formulario6 = $(FORMSIDS.formulario6.id);
 
-const URL_Base = "http://localhost:8765"
+const URL_Base = "https://server-php-taller-programacion-web.zeabur.app"
 const UBICACION = "/src/db/control/formRequest.php"
 const URL = `${URL_Base}${UBICACION}`
 formulario1.addEventListener('submit', (e) => {

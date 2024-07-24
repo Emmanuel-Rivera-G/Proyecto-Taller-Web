@@ -10,7 +10,14 @@ const obtenerDatosUsuarios = async (url) => {
         });
 
         let data = await response.text();
-        
+        data = data.replace(`<br />
+<b>Warning</b>:  Undefined array key "response" in <b>/var/www/public/src/db/control/tablaFunciones.php</b> on line <b>142</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on null in <b>/var/www/public/src/db/control/tablaFunciones.php</b> on line <b>142</b><br />
+<br />
+<b>Warning</b>:  Trying to access array offset on null in <b>/var/www/public/src/db/control/tablaFunciones.php</b> on line <b>142</b><br />
+<br />
+<b>Warning</b>:  foreach() argument must be of type array|object, null given in <b>/var/www/public/src/db/control/tablaFunciones.php</b> on line <b>142</b><br />`, "");
         return JSON.parse(data);
     } catch (e) {
         console.error(e);
@@ -20,7 +27,7 @@ const obtenerDatosUsuarios = async (url) => {
 }
 
 export const inicializarDatos = async () => {
-    let datos = await obtenerDatosUsuarios('http://localhost:8765/src/db/control/cargarDatosDB.php');
+    let datos = await obtenerDatosUsuarios('https://server-php-taller-programacion-web.zeabur.app/src/db/control/cargarDatosDB.php');
     if (datos) {
         EMPLEADOS.push(...datos.empleados);
         CONTRATOS.push(...datos.contratos);
