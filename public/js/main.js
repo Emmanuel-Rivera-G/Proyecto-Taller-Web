@@ -51,4 +51,4 @@ document.querySelector('.abrir-ventana').addEventListener('click', function () {
     cerrarModal();
 });
 
-llenarTablas();
+await llenarTablas();

@@ -24,14 +24,23 @@ function llenarTabla(tabla, dataBase) {
 function parsearEmpleadosTabla1() {
     const empleados = [];
     EMPLEADOS.forEach((el) => {
+
         const empleado = {
             num: el.cod_empleado,
             nombre: el.nombre + (el.apellidoPater == 'undefined' ? '' : ' ' + el.apellidoPater) + (el.apellidoMater == 'undefined' ? '' : ' ' + el.apellidoMater),
             email: el.email,
             usuario: el.usuario,
-            cargo: CARGOS.filter(cargo => cargo.cod_cargo == CONTRATOS.filter(contrato => contrato.cod_contrato == el.cod_contrato)[0].cod_cargo)[0].nom_puesto,
+            cargo: CARGOS.filter((cargo) => {
+                return (cargo.cod_cargo ==
+                (CONTRATOS.filter((contrato) => {
+                    return contrato.cod_contrato == el.cod_contrato
+                })
+                .map((inter) => {
+                    return inter.cod_cargo
+                })))
+            })[0].nom_puesto,
             dni: el.DNI,
-            estado: el.Estado
+            estado: (el.estado == 1 ? 'Activo' : 'Inactivo')
         };
         empleados.push(empleado);
     }); 
@@ -47,7 +56,7 @@ function parsearContratos() {
             trabajador: emp.nombre + emp.apellidoPater,
             fechaInicio: el.fecha_inicio,
             fechaFin: el.fecha_fin,
-            cargo: CARGOS.filter(cargo => cargo.cod_cargo == emp.cod_cargo)[0].nom_puesto,
+            cargo: CARGOS.filter(cargo => cargo.cod_cargo == CONTRATOS.filter(contrato => contrato.cod_contrato == emp.cod_contrato)[0].cod_cargo)[0].nom_puesto,
             salario: el.salario
         };
         contratos.push(contrato);
@@ -58,7 +67,7 @@ function parsearContratos() {
 
 
 
-export default function llenarTablasUsuarios() {
+export default async function llenarTablasUsuarios() {
     llenarTabla($tablaInicioTrabajadoresBody, parsearEmpleadosTabla1());
     llenarTabla($tablaContratosBody, parsearContratos());
 }

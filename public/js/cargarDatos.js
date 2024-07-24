@@ -31,7 +31,7 @@ export const inicializarDatos = async () => {
     }
 }
 
-export const limpiarDados = () => {
+export const limpiarDados = async () => {
     clearUser();
     clearEmployeesArray();
     clearContractsArray();
@@ -41,4 +41,6 @@ export const limpiarDados = () => {
     clearDetallePagosArray();
 }
 
-await inicializarDatos();
+if (EMPLEADOS.length == 0) {
+    await inicializarDatos();
+}
