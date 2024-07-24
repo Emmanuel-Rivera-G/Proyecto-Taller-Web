@@ -3,9 +3,9 @@ const employees = [
     { number: 2, name: 'Maria García', email: 'maria.garcia@example.com', usuario: 'mariagarcia', rol: 'gerencia', fechaFin: '2024-09-27', status: 'Activo' },
 ];
 
-const tableBody = document.getElementById('tabla-trabajadores-body');
+export const tableBody = document.getElementById('tabla-trabajadores-body');
 
-function llenarTablaTrabajadores(tabla = tableBody, data) {
+export function llenarTablaTrabajadores(tabla = tableBody, data) {
     data.forEach(element => {
         const row = document.createElement('tr');
         Object.values(element).forEach(value => {

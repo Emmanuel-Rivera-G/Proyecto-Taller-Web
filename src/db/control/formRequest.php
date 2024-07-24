@@ -40,22 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 function manejarFormulario1() {
     global $formId;
     
-    $consulta = [
-        "requests" => [
-            [
-                "type" => "execute",
-                "stmt" => [
-                    "sql" => 
-                    construirConsulta('empleado')
-                    ,
-                    "args" => []
-                ]
-            ],
-            [
-                "type" => "close"
-            ]
-        ]
-    ];
+    $text = $_POST['barra-busqueda'];
+
+    $consulta = construirConsulta('Empleado','*');
     $respuesta = enviarDatos(json_encode($consulta));
     $datos = json_decode($respuesta, true);
     $datos = [
